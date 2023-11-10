@@ -1,0 +1,454 @@
+fileFormatVersion: 2
+guid: 738215d5280c01644b42c6fcecb53cba
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Boots_01_Black
+    second: {fileID: 2100000, guid: df28e52971b26564f90ae3632ce55602, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Boots_01_White
+    second: {fileID: 2100000, guid: 2b1bd3dfd10276c498185fc6c3b1773b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Coat_01_Yellow
+    second: {fileID: 2100000, guid: 5e070cbcc0fb4534baecdf8d47a4886d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Dress_01_Yellow
+    second: {fileID: 2100000, guid: 5e8ffa0142a06fa4685f26877eadb057, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Eyes_Black
+    second: {fileID: 2100000, guid: 2992e87dd4b2ea340ae79c1289b99fd3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Eyes_Blue
+    second: {fileID: 2100000, guid: 6fe19e2edccae2a438d695225c6f7859, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Eyes_Brown
+    second: {fileID: 2100000, guid: b0f3b7ea083a4d1458f7b401876f5a15, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Eyes_Green
+    second: {fileID: 2100000, guid: e807b2aaee8d0e94dbb0d33244a8770c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Eyes_Grey
+    second: {fileID: 2100000, guid: bca013f645fa7b24d83e2aa6c1bc9981, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Glasses_01_Black
+    second: {fileID: 2100000, guid: c4fe811fcb18a9e4c8b644217b464fd2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_01
+    second: {fileID: 2100000, guid: 662d839b08691de47b53abe79699cde8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_02_F
+    second: {fileID: 2100000, guid: 5834355952e1b204fba88d0ceb01b4ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_03_F
+    second: {fileID: 2100000, guid: 4d693412fe9fe3d4f996e604935998a9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_04_F
+    second: {fileID: 2100000, guid: 61b81a7bbe077a84bbc07255e11c4c3d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_05
+    second: {fileID: 2100000, guid: dab7f9452d6e87e4e83513aeca0f56cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_06_F
+    second: {fileID: 2100000, guid: 3eb3643d3f7dbed49adfeb69142513a2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_07
+    second: {fileID: 2100000, guid: 38eb6923ec71cf84a91f2e0d365c1516, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_08_F
+    second: {fileID: 2100000, guid: cd45e266dfecc2b4b919959d39b856b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_09
+    second: {fileID: 2100000, guid: 17758110ab8229b43941b2121ca252ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_10_F
+    second: {fileID: 2100000, guid: 4c091942930a8294493d7bb3a9fbeb2a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_11_F
+    second: {fileID: 2100000, guid: 8a50085c3f013674098cc1ab9fd1f7db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_12
+    second: {fileID: 2100000, guid: 19d3b2d0a92551c4b8b29cdd253a7162, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_13_F
+    second: {fileID: 2100000, guid: ebaee0c45338dce45adc334d4738c63a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_14
+    second: {fileID: 2100000, guid: f5ac3b26ad0fa4c44ba206e2df83a9e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_15_F
+    second: {fileID: 2100000, guid: 7ce892881ed60fd439b4e334147a1293, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hats
+    second: {fileID: 2100000, guid: 68d4951b14f40c04eaf5b8c8e73e34d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Heels_01_Black
+    second: {fileID: 2100000, guid: ae56ac128f809c44e8bd49f3e2baef3d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Jeans_01_Blue
+    second: {fileID: 2100000, guid: 8300f5be55cade942a6861405bb9397f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Jeans_01_Brown
+    second: {fileID: 2100000, guid: 86ac337aa327c9b42b0630e6fb741f3c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Pants_01_F_Black
+    second: {fileID: 2100000, guid: ad321c2c6b96ff343a2eb9189102db5c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Pants_01_F_Blue
+    second: {fileID: 2100000, guid: 3092815d6c3bff74ebf42bffb1b17f4b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Pants_01_F_Brown
+    second: {fileID: 2100000, guid: eccfef2ebe4723041866e76348c78469, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Pants_02_F_Black
+    second: {fileID: 2100000, guid: 24428ffa441741c4dacea134ed374041, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Pants_03_F_White
+    second: {fileID: 2100000, guid: f7065a5485feced42b011375ae559f47, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Pants_04_F_Black
+    second: {fileID: 2100000, guid: 62ac6f6d874d3f24288cb7aa753517a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Pants_04_F_Grey
+    second: {fileID: 2100000, guid: 44a8245776bd19440966ca2f8aba1c79, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Pants_05_Black
+    second: {fileID: 2100000, guid: 17908057eae5b464b9f220682778ec28, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Props
+    second: {fileID: 2100000, guid: a37e6aebcefac544899563b90ccced37, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Robe_01_Black
+    second: {fileID: 2100000, guid: d204fa6bc7aafb14d8448f5919209a37, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Shirt_01_F_Purple
+    second: {fileID: 2100000, guid: ff65208c005d4a04d84f0763d7d6d576, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Shirt_01_F_White
+    second: {fileID: 2100000, guid: 3592fbec37e1a0d4492be336247edfb3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Shirt_02_F_Purple
+    second: {fileID: 2100000, guid: dd72263d2dd1215499e5795d4113a669, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Shirt_03_F_Pink
+    second: {fileID: 2100000, guid: c57d6538634cd31459293e09fd42c9f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Shirt_04_Blue
+    second: {fileID: 2100000, guid: 758f0cd03d6cf354391bbab279180ef6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_SkinColor_01
+    second: {fileID: 2100000, guid: 06a813b3a7839674586f79ac7889fd6e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_SkinColor_02
+    second: {fileID: 2100000, guid: 3471fb74f677996448464736a1baf869, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_SkinColor_03
+    second: {fileID: 2100000, guid: d17f49af8f72272469757cc6a5c0165f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_SkinColor_04
+    second: {fileID: 2100000, guid: b0c538f72ee25fc4f93880b4146a90a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_SkinColor_05
+    second: {fileID: 2100000, guid: 747ec61dc7a01904594434e16652c718, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Skirt_01_Black
+    second: {fileID: 2100000, guid: 816bc5a792cd10846a7867f0e6780d84, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Sneakers_01_White
+    second: {fileID: 2100000, guid: de5067bbc577a3042b47b3218fdf7536, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Sneakers_02_Black
+    second: {fileID: 2100000, guid: b86bc8a94e1d8e04993df39d23c6092c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Sneakers_03_White
+    second: {fileID: 2100000, guid: 9587993d40644224c9ecfe677eb46b64, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Sneakers_04_Blue
+    second: {fileID: 2100000, guid: a720b908737b08d488ca219cd21f7670, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Sneakers_06_Red
+    second: {fileID: 2100000, guid: 448c1a771e82df54497d4cf138149fb9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_SportPants_01_Black
+    second: {fileID: 2100000, guid: bf567c75c80a3e045b747c6cef6ee8c7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_SportPants_01_Blue
+    second: {fileID: 2100000, guid: 18f28018418912545b107666c511e129, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_SportPants_02_F_Blue
+    second: {fileID: 2100000, guid: 22c5ef82728a0704daaefb5c5839a3ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Suit_01_F_BlackRed
+    second: {fileID: 2100000, guid: 6a7db71a6b2545b45af981916121d8bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Suit_01_F_Brown
+    second: {fileID: 2100000, guid: b0b494c87d14e9d42b96c3982bed4aed, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Sweater_01_Green
+    second: {fileID: 2100000, guid: 47f8f5f0caf543542aba6ed57ffc194a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Sweater_01_Yellow
+    second: {fileID: 2100000, guid: 94aab83e04cfc20499ac3e845087a987, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Sweater_02_Yellow
+    second: {fileID: 2100000, guid: b5bc4df876306314b885970bdef6d16c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Sweater_03_F_Blue
+    second: {fileID: 2100000, guid: 2fbab0685dbbcec4d8a2faba93b36862, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_TShirt_01_F_Pets
+    second: {fileID: 2100000, guid: 7c0c8254409c484419d164d54a33e4ae, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_TShirt_01_F_Purple
+    second: {fileID: 2100000, guid: cda618e8061b85345bf45fd56c3d99a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_TShirt_02_Green
+    second: {fileID: 2100000, guid: ac78b726c467a624e837df5e3b6ca604, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_TShirt_02_Orange
+    second: {fileID: 2100000, guid: 0b3b93217536631419989e5f4355cc34, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_TShirt_02_Purple
+    second: {fileID: 2100000, guid: 1a2c3f6c3d7d07b498db2a3fb6fa6bb4, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 1
+    materialSearch: 2
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
