@@ -7,23 +7,53 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_AgriculturePaysage_Female
+    second: {fileID: 2100000, guid: bcc2337aebe43f1418cbb75c8aa8a6fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: M_AlimentationAgroalimentaire_Female
-    second: {fileID: 2100000, guid: 227d6c883d709ab4ea4b63db53c77c22, type: 2}
+    second: {fileID: 2100000, guid: 25b308420d06c6044883e8654f7e9574, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Animaux_Female
+    second: {fileID: 2100000, guid: e00cc0e331e41ff49bab55683a3b56dc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_ArchitecteDecoration_Female
+    second: {fileID: 2100000, guid: f88db8b983f0019468d9b314dcb359c4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_ArchitecteDecoration_Male
+    second: {fileID: 2100000, guid: b61d76e224466f74ea13fb0f6533209c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_ArmeeSecuriteSecours_Female
-    second: {fileID: 2100000, guid: 75619d88a575e3b44a2a1dad3774f8fb, type: 2}
+    second: {fileID: 2100000, guid: 193b824c6d97fef458e1aca565dd07ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_ArtisanatDArt_Female
+    second: {fileID: 2100000, guid: 294f5a014f6806f4dbc90390254f1df1, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_BTPUrbanisme_Female
-    second: {fileID: 2100000, guid: 1d49f9cb640989742b1833332f42dbcd, type: 2}
+    second: {fileID: 2100000, guid: 74dc06ceb4df4b64bba85e94add4f4c2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_BanqueFinanceAssurance_Female
+    second: {fileID: 2100000, guid: c11a9461570f6d94f914d29b4c1fa9b1, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_BiologieChimie_Female
-    second: {fileID: 2100000, guid: b75f3b94fd4579d4d910c1d33f7fce19, type: 2}
+    second: {fileID: 2100000, guid: 151baa9feb10a294296a13cfba2a13a8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -37,13 +67,68 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_CinemaAudiovisuelJeuxVideo
+    second: {fileID: 2100000, guid: 29a60cae611708b4eb31958719e311c4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: M_Coat_01_Yellow
     second: {fileID: 2100000, guid: 5e070cbcc0fb4534baecdf8d47a4886d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_CommerceImmobilier_Female
+    second: {fileID: 2100000, guid: 9225a878f72ba4a4484fc27f11a5ea2d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_CommunicationJournalismeMarketing_Female
+    second: {fileID: 2100000, guid: 6a75e5d332d57cd4f936ef30b982b4a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_CultureSpectaclePatrimoine_Female
+    second: {fileID: 2100000, guid: c7f759ba80481b24299cc2eeeeae1182, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_DesignMode_Female
+    second: {fileID: 2100000, guid: 62c374fa4ece84c4fa9f144138e47ef5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: M_Dress_01_Yellow
     second: {fileID: 2100000, guid: 5e8ffa0142a06fa4685f26877eadb057, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_DroitJustice_Female
+    second: {fileID: 2100000, guid: 8dac553eb7ad14344bc9702807d13b95, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_EditionImprimerieLivre_Female
+    second: {fileID: 2100000, guid: 4d8f6ce24ea0a424bb89166f2e6bfb55, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_ElectriciteElectroniqueRobotique_Female
+    second: {fileID: 2100000, guid: 8c7308c57b7c53a44911a12fce9759d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Energie
+    second: {fileID: 2100000, guid: 9df7faebce0a99046a1e63dbfacf0237, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Enseignement_Female
+    second: {fileID: 2100000, guid: a585a66e9d4e87343823fc12f4b7ecc4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Environnement_Female
+    second: {fileID: 2100000, guid: a0b617be4977694498cd74e5bbeb395d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -69,6 +154,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: M_Eyes_Grey
     second: {fileID: 2100000, guid: bca013f645fa7b24d83e2aa6c1bc9981, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_GestionComptabiliteRH_Female
+    second: {fileID: 2100000, guid: 97e78c1bfe61e6247851c975ff3499d0, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -162,6 +252,21 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_HotellerieRestaurationTourisme_Female
+    second: {fileID: 2100000, guid: f67db82c535259b4285e187b710d097a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Humanitaire
+    second: {fileID: 2100000, guid: e38fc2711e1cd5a4489ac065ae888729, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_InformatiqueWebReseaux_Female
+    second: {fileID: 2100000, guid: bcdd6dce8a483c24a99ed087955bbd75, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: M_Jeans_01_Blue
     second: {fileID: 2100000, guid: 8300f5be55cade942a6861405bb9397f, type: 2}
   - first:
@@ -172,8 +277,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_LettreSciencesHumainesLangues
+    second: {fileID: 2100000, guid: cb7a543d781ef0049ad093aea37467bc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_MateriauxIndustrie_Female
+    second: {fileID: 2100000, guid: 8ee704fb6261d1e418accf6931759bad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: M_MecaniqueAutomobile_Female
-    second: {fileID: 2100000, guid: e56cf13c6d739604398e2e496a2edba8, type: 2}
+    second: {fileID: 2100000, guid: 6c859bcef97889049af9ca1656c8f9de, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -228,12 +343,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_SanteParamedical_Female
-    second: {fileID: 2100000, guid: 50026703618287141a3bc69cf7fdf5b0, type: 2}
+    second: {fileID: 2100000, guid: e540ee8078ee8a841bb6ebe32524e1b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_SciencePhysiqueMathsData_Female
+    second: {fileID: 2100000, guid: 74aa0a3c2ac1a9f44974f0b7c9c318b9, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_Secretariat_Female
-    second: {fileID: 2100000, guid: 90253b1941da3604f8a3725649e1d55b, type: 2}
+    second: {fileID: 2100000, guid: 871fd1861a19a154188c7dfba80be72f, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -317,8 +437,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_SocialPetiteEnfance
+    second: {fileID: 2100000, guid: e10d9f05fd9d4164aa90157d09aeec41, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: M_SoinsEsthetiqueCoiffure_Female
-    second: {fileID: 2100000, guid: 4df302d9c0e7e654a87bf4f8f749e1a9, type: 2}
+    second: {fileID: 2100000, guid: 96c6f00fdff0cf9429707dea2b894e70, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_SportAnimation
+    second: {fileID: 2100000, guid: 46ac4bd463008d145a3016fc18e28650, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -389,6 +519,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: M_TShirt_02_Purple
     second: {fileID: 2100000, guid: 1a2c3f6c3d7d07b498db2a3fb6fa6bb4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_TransportLogistique_Female
+    second: {fileID: 2100000, guid: f9ca0931c2dd83443b18685bcd29d36e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 1
@@ -409,7 +544,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -476,15 +611,16 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: 
+    rootMotionBoneName: mixamorig:Hips
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 32ae73dd4c5e2c34dbe7653259849cda,
+    type: 3}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 2
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   importBlendShapeDeformPercent: 1
   remapMaterialsIfMaterialImportModeIsNone: 0

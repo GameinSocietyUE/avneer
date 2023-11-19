@@ -7,23 +7,53 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_AgriculturePaysage_Male
+    second: {fileID: 2100000, guid: 90541bf06da5ac5439916ebf4eedd54b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: M_AlimentationAgroalimentaire_Male
-    second: {fileID: 2100000, guid: f13dd0770466d0b4e813fde2570020c9, type: 2}
+    second: {fileID: 2100000, guid: 55ea80183eaa20944868c15a81fb0ed5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Animaux_Female
+    second: {fileID: 2100000, guid: e00cc0e331e41ff49bab55683a3b56dc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Animaux_Male
+    second: {fileID: 2100000, guid: bcfd0a6fca769864db3450eccaf7dd79, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_ArchitecteDecoration_Male
+    second: {fileID: 2100000, guid: b61d76e224466f74ea13fb0f6533209c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_ArmeeSecuriteSecours_Male
-    second: {fileID: 2100000, guid: 62f28454ddc156e44ab12155949fe38f, type: 2}
+    second: {fileID: 2100000, guid: a23be19a5f581b54cbaae24dc01d52c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_ArtisanatDArt_Male
+    second: {fileID: 2100000, guid: 76e3875cae94da74faa7b1a52f82a8af, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_BTPUrbanisme_Male
-    second: {fileID: 2100000, guid: 26502c5ccfe8de04d91e8e086abb2738, type: 2}
+    second: {fileID: 2100000, guid: 38ad8ddeac5b31f4cae56c1684341976, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_BanqueFinanceAssurance_Male
+    second: {fileID: 2100000, guid: 69722783dbf178448a67f61444b55154, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_BiologieChimie_Male
-    second: {fileID: 2100000, guid: e174d4af825d7f04b91de91d583b1a0b, type: 2}
+    second: {fileID: 2100000, guid: c1ee3a672f45c8f4dacb8ed2700a6b8a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -32,8 +62,63 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_CinemaAudiovisuelJeuxVideo
+    second: {fileID: 2100000, guid: 29a60cae611708b4eb31958719e311c4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: M_Coat_01_Yellow
     second: {fileID: 2100000, guid: 5e070cbcc0fb4534baecdf8d47a4886d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_CommerceImmobilier_Male
+    second: {fileID: 2100000, guid: 45b854831b270ee4ab451300f738441b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_CommunicationJournalismeMarketing_Male
+    second: {fileID: 2100000, guid: 2825d6f73905b5b44b0ca711da178cc1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_CultureSpectaclePatrimoine_Male
+    second: {fileID: 2100000, guid: 793a5cff6b2cad84493cd9746991df84, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_DesignMode_Male
+    second: {fileID: 2100000, guid: 41bf1cfebfeb25a4ba3539dc3b3277aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_DroitJustice_Female
+    second: {fileID: 2100000, guid: 8dac553eb7ad14344bc9702807d13b95, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_EditionImprimerieLivre_Male
+    second: {fileID: 2100000, guid: be109ddb5a334a74f8bf333cabf3f931, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_ElectriciteElectroniqueRobotique_Male
+    second: {fileID: 2100000, guid: b2ae23bf702b6c241a77b64e4976fe6d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Energie
+    second: {fileID: 2100000, guid: 9df7faebce0a99046a1e63dbfacf0237, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Enseignement_Female
+    second: {fileID: 2100000, guid: a585a66e9d4e87343823fc12f4b7ecc4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Environnement_Male
+    second: {fileID: 2100000, guid: 3cf0943f4e115aa48a4a4947040a90d2, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -79,6 +164,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: M_FacialHair_04
     second: {fileID: 2100000, guid: 450801c0b985b294b80224a416912c65, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_GestionComptabiliteRH_Male
+    second: {fileID: 2100000, guid: 96e1a27c7f7fd5b479dad1e61139c304, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -167,6 +257,21 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_HotellerieRestaurationTourisme_Male
+    second: {fileID: 2100000, guid: 91205b0ca8922004aa08e3f32a0d2c00, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Humanitaire
+    second: {fileID: 2100000, guid: e38fc2711e1cd5a4489ac065ae888729, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_InformatiqueWebReseaux_Male
+    second: {fileID: 2100000, guid: 3542cb1882477cc4681942e14d953cb8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: M_Jeans_01_Blue
     second: {fileID: 2100000, guid: 8300f5be55cade942a6861405bb9397f, type: 2}
   - first:
@@ -177,8 +282,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_LettreSciencesHumainesLangues
+    second: {fileID: 2100000, guid: cb7a543d781ef0049ad093aea37467bc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_MateriauxIndustrie_Male
+    second: {fileID: 2100000, guid: ea484968e01a8f84e91bf79fb404ff95, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: M_MecaniqueAutomobile_Male
-    second: {fileID: 2100000, guid: 4a0592bf5577d114d941214eca134994, type: 2}
+    second: {fileID: 2100000, guid: 5a6865b2dc155174e8c1e926f2f8bec3, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -238,12 +353,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_SanteParamedical_Male
-    second: {fileID: 2100000, guid: 234150658662b6744a6a3d42bac7c030, type: 2}
+    second: {fileID: 2100000, guid: 9f3586cbb2deb3849a1147ca5244736d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_SciencePhysiqueMathsData_Male
+    second: {fileID: 2100000, guid: f9e57ab179edd4545ad521ffb38fbfce, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_Secretariat_Male
-    second: {fileID: 2100000, guid: b2dd4594f82f13d41b7b4da7159720b0, type: 2}
+    second: {fileID: 2100000, guid: fba59cf5918ae4047a3802ad7b3ba6c0, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -347,8 +467,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_SocialPetiteEnfance
+    second: {fileID: 2100000, guid: e10d9f05fd9d4164aa90157d09aeec41, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: M_SoinsEsthetiqueCoiffure_Male
-    second: {fileID: 2100000, guid: 47f65dd2f6e086244b9075848ffc953b, type: 2}
+    second: {fileID: 2100000, guid: dccae4702c4dae0479677f97e6c5898f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_SportAnimation
+    second: {fileID: 2100000, guid: 46ac4bd463008d145a3016fc18e28650, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -419,6 +549,11 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: M_TShirt_03_M_Blue
     second: {fileID: 2100000, guid: 67bf7e70d59dbe945b20813675c05e49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_TransportLogistique_Male
+    second: {fileID: 2100000, guid: 9a2ba84511bf4c442bdca6603e0b937a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 1
@@ -463,7 +598,7 @@ ModelImporter:
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
@@ -493,7 +628,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 1
+  importAnimation: 0
   humanDescription:
     serializedVersion: 3
     human: []

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2da774ea8ac485b44a05f511b750bc92
+guid: 32ae73dd4c5e2c34dbe7653259849cda
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -34,8 +34,8 @@ ModelImporter:
     clipAnimations:
     - serializedVersion: 16
       name: Animation_Acknowledging
-      takeName: AvatarAnimation|Animation_Acknowledging
-      internalID: -1758449694236259373
+      takeName: Armature|Acknowledging
+      internalID: -1622426552289831905
       firstFrame: 0
       lastFrame: 58
       wrapMode: 0
@@ -63,8 +63,8 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Animation_ArmGesture
-      takeName: AvatarAnimation|Animation_ArmGesture
-      internalID: 6843493348923069719
+      takeName: Armature|ArmGesture
+      internalID: -3054343810556914011
       firstFrame: 0
       lastFrame: 102
       wrapMode: 0
@@ -92,8 +92,8 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Animation_Bored
-      takeName: AvatarAnimation|Animation_Bored
-      internalID: 1803756269594358562
+      takeName: Armature|Bored
+      internalID: 6025388996649071102
       firstFrame: 0
       lastFrame: 320
       wrapMode: 0
@@ -121,8 +121,8 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Animation_DismissingGesture
-      takeName: AvatarAnimation|Animation_DismissingGesture
-      internalID: 5979598758453113633
+      takeName: Armature|DismissingGesture
+      internalID: 1288970056287860120
       firstFrame: 0
       lastFrame: 98
       wrapMode: 0
@@ -150,8 +150,8 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Animation_HandsForwardGesture
-      takeName: AvatarAnimation|Animation_HandsForwardGesture
-      internalID: 7298185901172766486
+      takeName: Armature|HandsForwardGesture
+      internalID: -5825174954157128997
       firstFrame: 0
       lastFrame: 93
       wrapMode: 0
@@ -179,8 +179,8 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Animation_HappyHandGesture
-      takeName: AvatarAnimation|Animation_HappyHandGesture
-      internalID: -3400101095361774477
+      takeName: Armature|HappyHandGesture
+      internalID: 373982187450823580
       firstFrame: 0
       lastFrame: 88
       wrapMode: 0
@@ -208,8 +208,8 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Animation_HeadGesture
-      takeName: AvatarAnimation|Animation_HeadGesture
-      internalID: 2533752889794919288
+      takeName: Armature|HeadGesture
+      internalID: 4808031986699505685
       firstFrame: 0
       lastFrame: 84
       wrapMode: 0
@@ -237,8 +237,8 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Animation_Idle
-      takeName: AvatarAnimation|Animation_Idle
-      internalID: 8723814200145777518
+      takeName: Armature|Idle
+      internalID: -8945691123924629249
       firstFrame: 0
       lastFrame: 250
       wrapMode: 0
@@ -266,8 +266,8 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Animation_LookAwayGesture
-      takeName: AvatarAnimation|Animation_LookAwayGesture
-      internalID: 8063489642911257975
+      takeName: Armature|LookAwayGesture
+      internalID: -3338937633048698573
       firstFrame: 0
       lastFrame: 70
       wrapMode: 0
@@ -295,8 +295,8 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Animation_LookingAround
-      takeName: AvatarAnimation|Animation_LookingAround
-      internalID: -7385573639717805894
+      takeName: Armature|LookingAround
+      internalID: 383310521095826238
       firstFrame: 0
       lastFrame: 190
       wrapMode: 0
@@ -324,8 +324,8 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Animation_LookingBehind
-      takeName: AvatarAnimation|Animation_LookingBehind
-      internalID: -3071504222549029561
+      takeName: Armature|LookingBehind
+      internalID: 1259411444932825769
       firstFrame: 0
       lastFrame: 121
       wrapMode: 0
@@ -353,8 +353,8 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Animation_NeckStretching
-      takeName: AvatarAnimation|Animation_NeckStretching
-      internalID: -8776187462756546513
+      takeName: Armature|NeckStretching
+      internalID: 1420725772118926571
       firstFrame: 0
       lastFrame: 96
       wrapMode: 0
@@ -382,8 +382,8 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Animation_NeutralIdle
-      takeName: AvatarAnimation|Animation_NeutralIdle
-      internalID: -3457151500390029832
+      takeName: Armature|NeutralIdle
+      internalID: -2733592976239092082
       firstFrame: 0
       lastFrame: 263
       wrapMode: 0
@@ -411,8 +411,8 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Animation_RelievedSigh
-      takeName: AvatarAnimation|Animation_RelievedSigh
-      internalID: 1011420931954661946
+      takeName: Armature|RelievedSigh
+      internalID: -3891705028462207410
       firstFrame: 0
       lastFrame: 90
       wrapMode: 0
@@ -440,8 +440,8 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Animation_ShoulderRubbing
-      takeName: AvatarAnimation|Animation_ShoulderRubbing
-      internalID: 9093302559016462345
+      takeName: Armature|ShoulderRubbing
+      internalID: 1544441048553307286
       firstFrame: 0
       lastFrame: 175
       wrapMode: 0
@@ -469,8 +469,8 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Animation_StandardIdle
-      takeName: AvatarAnimation|Animation_StandardIdle
-      internalID: 5334279831704470220
+      takeName: Armature|StandardIdle
+      internalID: 7866173588094031645
       firstFrame: 0
       lastFrame: 90
       wrapMode: 0
@@ -498,8 +498,8 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Animation_Talking
-      takeName: AvatarAnimation|Animation_Talking
-      internalID: -6855631028930883492
+      takeName: Armature|Talking
+      internalID: -8872200000013064226
       firstFrame: 0
       lastFrame: 113
       wrapMode: 0
@@ -527,8 +527,8 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Animation_ThoughtfulHeadNod
-      takeName: AvatarAnimation|Animation_ThoughtfulHeadNod
-      internalID: 3411018668069607460
+      takeName: Armature|ThoughtfulHeadNod
+      internalID: 1958280817693998187
       firstFrame: 0
       lastFrame: 88
       wrapMode: 0
@@ -556,8 +556,8 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: Animation_Waving
-      takeName: AvatarAnimation|Animation_Waving
-      internalID: -5072161335933561314
+      takeName: Armature|Waving
+      internalID: 4829966686875344911
       firstFrame: 0
       lastFrame: 142
       wrapMode: 0
