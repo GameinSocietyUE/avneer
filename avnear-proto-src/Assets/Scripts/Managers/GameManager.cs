@@ -7,6 +7,8 @@ using UnityEngine.UIElements;
 using System.IO;
 using System;
 using System.Text.RegularExpressions;
+using System.Data;
+using UnityEditor.VersionControl;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,15 +21,29 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public class QuestionList
+    {
+        public QuestionData[] questions;
+    }
+
+    public QuestionList chatList = new QuestionList();
+
+    [SerializeField] private NetworkManager _networkManager;
+
     [SerializeField] private GameObject waitingMessagePrefab;
     [SerializeField] private GameObject botMessagePrefab;
     [SerializeField] private GameObject userMessagePrefab;
+    [SerializeField] private GameObject answerMessagePrefab;
     [SerializeField] private GameObject chatContent;
     [SerializeField] private ScrollRect scrollRect;
     [SerializeField] private GameObject objectPoolContainer;
     [SerializeField] private GameObject emptyLastLine;
 
-    private List<MessageData> messagesList = new List<MessageData>();
+    //private List<MessageData> messagesList = new List<MessageData>();
+    [SerializeField] private QuestionData[] currentChatList;
+    private int chatIndex = 0; 
+
+    private List<AnswerContainer> answerScriptList = new List<AnswerContainer>();
 
     private void Awake()
     {
@@ -37,9 +53,11 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.MakeMessageList();
-        Debug.Log(messagesList);
-        StartCoroutine(StartChat());
+        //this.MakeMessageList();
+        //Debug.Log(messagesList);
+        //StartCoroutine(StartChat());
+
+        StartCoroutine(_networkManager.GetChatData());
     }
 
     // Update is called once per frame
@@ -48,8 +66,18 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void BuildChat(String jsonResponse)
+    {
+        Debug.Log("BuildChat: " + jsonResponse);
+        chatList = JsonUtility.FromJson<QuestionList>(jsonResponse);
+        currentChatList = chatList.questions;
+        //StartCoroutine(StartChat());
+        chatIndex = 0;
+        SendNextMessage();
+    }
 
-    private void MakeMessageList()
+
+    /*private void MakeMessageList()
     {
         string path = Application.persistentDataPath + "/chat.csv";
         Debug.Log(path);
@@ -94,7 +122,7 @@ public class GameManager : MonoBehaviour
             Debug.Log(e.Message);
         }
         return messageData;
-    }
+    }*/
 
     private void StartWaitingAnim()
     {
@@ -109,17 +137,25 @@ public class GameManager : MonoBehaviour
         waitingMessagePrefab.transform.SetParent(objectPoolContainer.transform);
     }
 
-    private void SendMessage(GameObject messagePrefab, string messageText, float messageWidth, float messageHeight)
+    private void SendMessageToChat(GameObject messagePrefab, string messageText, float messageWidth, float messageHeight)
     {
         GameObject mess = Instantiate(messagePrefab, Vector3.zero, Quaternion.identity, chatContent.transform);
-        //mess.transform.SetParent(chatContent.transform, false);
         Message messageScript = mess.GetComponent<Message>();
         messageScript.SetMessage(messageText);
         messageScript.SetSize(messageWidth, messageHeight);
         StartCoroutine(ForceScrollDown());
     }
 
-    private IEnumerator StartChat()
+    private void SendAnswerToChat(GameObject messagePrefab, string id, List<QuestionData> answers)
+    {
+        GameObject mess = Instantiate(answerMessagePrefab, Vector3.zero, Quaternion.identity, chatContent.transform);
+        AnswerContainer ansScript = mess.GetComponent<AnswerContainer>();
+        answerScriptList.Add(ansScript);
+        ansScript.CreateAnswerList(id, answers);
+        StartCoroutine(ForceScrollDown());
+    }
+
+    /*private IEnumerator StartChat()
     {
         foreach (MessageData message in messagesList)
         {
@@ -134,11 +170,11 @@ public class GameManager : MonoBehaviour
                     this.StartWaitingAnim();
                     yield return new WaitForSeconds(message.waitingAnimTime);
                     this.StopWaitingAnim();
-                    this.SendMessage(botMessagePrefab, message.messageText, message.messageWidth, message.messageHeight);
+                    this.SendMessageToChat(botMessagePrefab, message.messageText, message.messageWidth, message.messageHeight);
                 }
                 else if (message.messageType == 2)
                 {
-                    this.SendMessage(userMessagePrefab, message.messageText, message.messageWidth, message.messageHeight);
+                    this.SendMessageToChat(userMessagePrefab, message.messageText, message.messageWidth, message.messageHeight);
                 }
                 else
                 {
@@ -150,7 +186,91 @@ public class GameManager : MonoBehaviour
         //Spawn send result button
         emptyLastLine.transform.SetParent(chatContent.transform);
         StartCoroutine(ForceScrollDown());
+    }*/
+
+    public void SelectAnswer(GameObject answerContainer, AnswerContainer answerScript)
+    {
+        Debug.Log("SelectAnswer: " + answerScript.selectedLabel);
+        string messageText = answerScript.selectedLabel;
+        answerContainer.SetActive(false);
+        this.SendMessageToChat(userMessagePrefab, messageText, 400f, 115f);
+        SendNextMessage();
     }
+
+    public void SendNextMessage()
+    {
+        if (chatIndex < currentChatList.Length - 1)
+        {
+            StartCoroutine(SendMessage(currentChatList[chatIndex]));
+            chatIndex++;
+        }
+        else
+        {
+            Debug.Log("End of chat");
+            //Spawn send result button
+            emptyLastLine.transform.SetParent(chatContent.transform);
+            StartCoroutine(ForceScrollDown());
+        }  
+    }
+
+    private IEnumerator SendMessage(QuestionData message)
+    {
+        if (message != null)
+        {
+            if (message.metadata != null)
+            {
+                //
+            }
+            //hard coded
+            yield return new WaitForSeconds(1f);
+            this.StartWaitingAnim();
+            //yield return new WaitForSeconds(message.waitingAnimTime);
+            yield return new WaitForSeconds(1f);
+            this.StopWaitingAnim();
+            this.SendMessageToChat(botMessagePrefab, message.label, 620f, 115f);
+
+            if (message.answers != null && message.answers.Count > 0)
+            {
+                yield return new WaitForSeconds(1f);
+                this.SendAnswerToChat(answerMessagePrefab, message.id, message.answers);
+            }
+            else
+            {
+                SendNextMessage();
+            }
+        }
+    }
+
+   /* private IEnumerator StartChat()
+    {
+        foreach (QuestionData message in chatList.questions)
+        {
+            if (message != null)
+            {
+                if (message.metadata != null)
+                {
+                    //
+                }
+                //hard coded
+                yield return new WaitForSeconds(1f);
+                this.StartWaitingAnim();
+                //yield return new WaitForSeconds(message.waitingAnimTime);
+                yield return new WaitForSeconds(1f);
+                this.StopWaitingAnim();
+                this.SendMessageToChat(botMessagePrefab, message.label, 620f, 115f);
+
+                if (message.answers != null && message.answers.Count > 0)
+                {
+                    //send user answer
+                    //this.SendMessage(userMessagePrefab, message.messageText, message.messageWidth, message.messageHeight);
+                }
+            }
+        }
+        Debug.Log("End of chat");
+        //Spawn send result button
+        emptyLastLine.transform.SetParent(chatContent.transform);
+        StartCoroutine(ForceScrollDown());
+    }*/
 
     private IEnumerator ForceScrollDown()
     {

@@ -8,6 +8,7 @@ public class Message : MonoBehaviour
 {
     [SerializeField] private TMP_Text messageTmp;
     [SerializeField] private RectTransform rectTransform;
+    [SerializeField] private GameObject answerContainer;
 
     public void SetMessage(string messageText)
     {
@@ -23,4 +24,11 @@ public class Message : MonoBehaviour
     {
         rectTransform.sizeDelta = new Vector2(width, height);
     }
+
+    public void SetAnswerContainer(GameObject answerContainer)
+    {
+        this.answerContainer = answerContainer;
+    }
+
+    //On long press, disable and enable answerContainer
 }
