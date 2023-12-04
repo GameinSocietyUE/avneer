@@ -478,10 +478,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 655522110884264805, guid: 062ea57a31bcb63489564656ed76dc28,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8b137bb28b0cb704cae43acb20022784,
+        type: 3}
     - target: {fileID: 5138484516989441719, guid: 062ea57a31bcb63489564656ed76dc28,
         type: 3}
       propertyPath: m_Name
       value: Prefab_Avatar_Male
+      objectReference: {fileID: 0}
+    - target: {fileID: 6230628909438955429, guid: 062ea57a31bcb63489564656ed76dc28,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6230628909438955429, guid: 062ea57a31bcb63489564656ed76dc28,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6230628909438955429, guid: 062ea57a31bcb63489564656ed76dc28,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 6230628909438955429, guid: 062ea57a31bcb63489564656ed76dc28,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.61
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
