@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
         //Debug.Log(messagesList);
         //StartCoroutine(StartChat());
 
-        StartCoroutine(_networkManager.GetChatData());
+        //StartCoroutine(_networkManager.GetChatData());
     }
 
     // Update is called once per frame
@@ -126,33 +126,35 @@ public class GameManager : MonoBehaviour
 
     private void StartWaitingAnim()
     {
-        waitingMessagePrefab.transform.SetParent(chatContent.transform);
+        /*waitingMessagePrefab.transform.SetParent(chatContent.transform);
         waitingMessagePrefab.SetActive(true);
-        StartCoroutine(ForceScrollDown());
+        StartCoroutine(ForceScrollDown());*/
     }
 
     private void StopWaitingAnim()
     {
-        waitingMessagePrefab.SetActive(false);
-        waitingMessagePrefab.transform.SetParent(objectPoolContainer.transform);
+        /*waitingMessagePrefab.SetActive(false);
+        waitingMessagePrefab.transform.SetParent(objectPoolContainer.transform);*/
     }
 
     private void SendMessageToChat(GameObject messagePrefab, string messageText, float messageWidth, float messageHeight)
     {
-        GameObject mess = Instantiate(messagePrefab, Vector3.zero, Quaternion.identity, chatContent.transform);
+        DisplayChat.Instance.AddMessage(messageText, DisplayChat.Side.Bot);
+        /*GameObject mess = Instantiate(messagePrefab, Vector3.zero, Quaternion.identity, chatContent.transform);
         Message messageScript = mess.GetComponent<Message>();
         messageScript.SetMessage(messageText);
         messageScript.SetSize(messageWidth, messageHeight);
-        StartCoroutine(ForceScrollDown());
+        StartCoroutine(ForceScrollDown());*/
     }
 
     private void SendAnswerToChat(GameObject messagePrefab, string id, List<QuestionData> answers)
     {
-        GameObject mess = Instantiate(answerMessagePrefab, Vector3.zero, Quaternion.identity, chatContent.transform);
+        DisplayAnswers.Instance.Display(answers);
+        /*GameObject mess = Instantiate(answerMessagePrefab, Vector3.zero, Quaternion.identity, chatContent.transform);
         AnswerContainer ansScript = mess.GetComponent<AnswerContainer>();
         answerScriptList.Add(ansScript);
         ansScript.CreateAnswerList(id, answers);
-        StartCoroutine(ForceScrollDown());
+        StartCoroutine(ForceScrollDown());*/
     }
 
     /*private IEnumerator StartChat()
@@ -187,6 +189,11 @@ public class GameManager : MonoBehaviour
         emptyLastLine.transform.SetParent(chatContent.transform);
         StartCoroutine(ForceScrollDown());
     }*/
+    public void SelectAnswer(string message) {
+        DisplayAnswers.Instance.FadeOut();
+        DisplayChat.Instance.AddMessage(message, DisplayChat.Side.User);
+        SendNextMessage();
+    }
 
     public void SelectAnswer(GameObject answerContainer, AnswerContainer answerScript)
     {
@@ -221,13 +228,18 @@ public class GameManager : MonoBehaviour
             {
                 //
             }
+
             //hard coded
-            yield return new WaitForSeconds(1f);
+            /*yield return new WaitForSeconds(1f);
             this.StartWaitingAnim();
-            //yield return new WaitForSeconds(message.waitingAnimTime);
+            /yield return new WaitForSeconds(message.waitingAnimTime);
             yield return new WaitForSeconds(1f);
-            this.StopWaitingAnim();
+            this.StopWaitingAnim();*/
+            yield return new WaitForSeconds(1f);
+
             this.SendMessageToChat(botMessagePrefab, message.label, 620f, 115f);
+
+            yield return new WaitForSeconds(2f);
 
             if (message.answers != null && message.answers.Count > 0)
             {
