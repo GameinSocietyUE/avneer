@@ -16,8 +16,8 @@ public class DisplayUser_Connected : Displayable
         displaySaves.Display(jobs);
     }
 
-    public void Display() {
-        FadeIn();
+    public override void Show() {
+        base.Show();
         SetSavedJobs(new List<string>() { "test 1", "test 2", "test 3" });
     }
 }

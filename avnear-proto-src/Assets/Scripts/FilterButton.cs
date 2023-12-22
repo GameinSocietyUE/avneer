@@ -22,6 +22,7 @@ public class FilterButton : Displayable, IPointerClickHandler {
     }
 
     public void Select() {
+        Tween.Bounce(GetTransform);
         ui_text.color = color_Selected;
         image.sprite = sprite_Selected;
     }

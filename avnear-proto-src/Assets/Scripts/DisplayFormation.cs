@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DisplayFormation : Displayable
 {
-    RectTransform rectTransform;
+    public RectTransform rectTransform;
     public GridFreeLayout GridFreeLayout;
     float minY = 0f;
 
@@ -14,13 +14,9 @@ public class DisplayFormation : Displayable
     public TextMeshProUGUI uiText_FormationName;
     public TextMeshProUGUI uiText_sup;
 
-    private void Start() {
-        rectTransform = GetComponent<RectTransform>();
-        minY = rectTransform.sizeDelta.y;
-    }
-
     public void Display(FormationData data) {
         FadeIn();
+        minY = rectTransform.sizeDelta.y;
         uiText_SchoolName.text = data.schoolName;
         uiText_SchoolLocation.text = data.schoolLocation;
         uiText_FormationName.text = data.formationName;

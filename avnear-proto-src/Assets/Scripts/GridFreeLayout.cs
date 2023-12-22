@@ -11,11 +11,7 @@ public class GridFreeLayout : MonoBehaviour
     public float spacing_X;
     public float spacing_Y;
     public float height = 0f;
-    private RectTransform rectTransform;
-
-    private void Start() {
-        rectTransform = GetComponent<RectTransform>();
-    }
+    public RectTransform rectTransform;
 
     // Update is called once per frame
     public void DisplayInfos(List<string> infos, out float newHeight) {

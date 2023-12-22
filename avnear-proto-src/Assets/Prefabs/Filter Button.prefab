@@ -90,15 +90,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a3bed4a78ae6334092e9f5daa29894d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: 0
+  visible: 0
   fade_duration: 0.3
   group: {fileID: 0}
-  ui_text: {fileID: 0}
-  image: {fileID: 0}
-  sprite_Selected: {fileID: 0}
-  sprite_Unselected: {fileID: 0}
-  color_Selected: {r: 0, g: 0, b: 0, a: 0}
-  color_Unselected: {r: 0, g: 0, b: 0, a: 0}
+  ui_text: {fileID: 3030124304216940436}
+  image: {fileID: 1554375753906877188}
+  sprite_Selected: {fileID: 21300000, guid: 8499894c3f42297429872806c3431821, type: 3}
+  sprite_Unselected: {fileID: 21300000, guid: 5932f5e923dbf584eafa8e21c8927d5e, type: 3}
+  color_Selected: {r: 1, g: 1, b: 1, a: 1}
+  color_Unselected: {r: 0.50980395, g: 0.5019608, b: 0.7411765, a: 1}
 --- !u!1 &8401633622880991582
 GameObject:
   m_ObjectHideFlags: 0
