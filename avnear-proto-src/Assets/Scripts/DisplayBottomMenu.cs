@@ -23,4 +23,8 @@ public class DisplayBottomMenu : Displayable
         rectTransform.anchoredPosition = Vector2.up * fadeIn_Decal;
         rectTransform.DOAnchorPos(Vector2.zero, fade_duration);
     }
+
+    public void TriggerBottomBar(int i) {
+        DisplayMessage.Instance.Display($"bottom bar button : {i}");
+    }
 }

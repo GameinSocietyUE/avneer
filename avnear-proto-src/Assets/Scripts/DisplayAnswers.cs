@@ -17,7 +17,8 @@ public class DisplayAnswers : Displayable {
     [SerializeField] private float fadeIn_Decal;
     [SerializeField] private float fadeIn_Duration;
     private float fadeIn_Init;
-
+    float initScale = 0f;
+    bool displayed = false;
     private void Awake() {
         Instance = this;
     }
@@ -25,6 +26,27 @@ public class DisplayAnswers : Displayable {
     public override void Start() {
         base.Start();
         fadeIn_Init = rectTransform.anchoredPosition.y;
+        initScale = DisplayChat.Instance.ScrollRect_RectTransform.sizeDelta.y;
+    }
+
+    public override void Hide() {
+        base.Hide();
+        Vector2 s = DisplayChat.Instance.ScrollRect_RectTransform.sizeDelta;
+        s.y = initScale;
+        DisplayChat.Instance.ScrollRect_RectTransform.sizeDelta = s;
+    }
+
+    public float verticaltest = 0f;
+
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            if (displayed) {
+                
+            } else {
+                
+            }
+            displayed = !displayed;
+        }
     }
 
     public void Display(List<QuestionData> answers) {
@@ -33,6 +55,11 @@ public class DisplayAnswers : Displayable {
             da.Hide();
         }
         StartCoroutine(DisplayCoroutine(answers));
+
+        Vector2 s = DisplayChat.Instance.ScrollRect_RectTransform.sizeDelta;
+        s.y -= rectTransform.sizeDelta.y;
+        DisplayChat.Instance.ScrollRect_RectTransform.sizeDelta = s;
+        DisplayChat.Instance.ScrollRect.verticalNormalizedPosition = verticaltest;
     }
 
     IEnumerator DisplayCoroutine(List<QuestionData> answers) {

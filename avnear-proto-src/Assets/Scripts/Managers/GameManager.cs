@@ -39,6 +39,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject objectPoolContainer;
     [SerializeField] private GameObject emptyLastLine;
 
+    public float messageDuration = 1f;
+    public float timer;
+    bool timerActive = false;
+
     //private List<MessageData> messagesList = new List<MessageData>();
     [SerializeField] private QuestionData[] currentChatList;
     private int chatIndex = 0; 
@@ -63,7 +67,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (timerActive) {
+            timer += Time.deltaTime;
+        }
     }
 
     public void BuildChat(String jsonResponse)
@@ -71,9 +77,8 @@ public class GameManager : MonoBehaviour
         Debug.Log("BuildChat: " + jsonResponse);
         chatList = JsonUtility.FromJson<QuestionList>(jsonResponse);
         currentChatList = chatList.questions;
-        //StartCoroutine(StartChat());
         chatIndex = 0;
-        SendNextMessage();
+        StartCoroutine(ChatCoroutine());
     }
 
 
@@ -192,7 +197,6 @@ public class GameManager : MonoBehaviour
     public void SelectAnswer(string message) {
         DisplayAnswers.Instance.FadeOut();
         DisplayChat.Instance.AddMessage(message, DisplayChat.Side.User);
-        SendNextMessage();
     }
 
     public void SelectAnswer(GameObject answerContainer, AnswerContainer answerScript)
@@ -206,6 +210,10 @@ public class GameManager : MonoBehaviour
 
     public void SendNextMessage()
     {
+        var message = currentChatList[chatIndex];
+        DisplayChat.Instance.AddMessage(message.label, DisplayChat.Side.Bot);
+        chatIndex++;
+        return;
         if (chatIndex < currentChatList.Length - 1)
         {
             StartCoroutine(SendMessage(currentChatList[chatIndex]));
@@ -218,6 +226,53 @@ public class GameManager : MonoBehaviour
             emptyLastLine.transform.SetParent(chatContent.transform);
             StartCoroutine(ForceScrollDown());
         }  
+    }
+
+    private IEnumerator ChatCoroutine() {
+
+        while ( chatIndex < currentChatList.Length - 1) {
+
+            // display bot message
+            var message = currentChatList[chatIndex];
+            DisplayChat.Instance.AddMessage(message.label, DisplayChat.Side.Bot);
+
+            // wait for user answer
+            if (message.answers != null && message.answers.Count > 0) {
+                yield return new WaitForSeconds(3f);
+                DisplayAnswers.Instance.Display(message.answers);
+                while (DisplayAnswers.Instance.visible)
+                    yield return null;
+                yield return new WaitForSeconds(1f);
+
+            }
+
+            StartTimer();
+            // wait for input or time
+            while (timer < messageDuration) {
+                if (Input.GetMouseButtonDown(0))
+                    break;
+                yield return null;
+
+                Debug.Log($"timer : {timer}");
+                Debug.Log($"pressing mouse : {Input.GetMouseButtonDown(0)}");
+            }
+            yield return new WaitForEndOfFrame();
+            EndTimer();
+
+            Debug.Log($"clicked");
+            ++chatIndex;
+        }
+
+        Debug.Log($"finished chat");
+        DisplayMessage.Instance.Display("Chat ended");
+    }
+
+    void StartTimer() {
+        timer = 0f;
+        timerActive = true;
+    }
+    void EndTimer() {
+        timerActive = false;
     }
 
     private IEnumerator SendMessage(QuestionData message)
@@ -239,7 +294,7 @@ public class GameManager : MonoBehaviour
 
             this.SendMessageToChat(botMessagePrefab, message.label, 620f, 115f);
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1f);
 
             if (message.answers != null && message.answers.Count > 0)
             {

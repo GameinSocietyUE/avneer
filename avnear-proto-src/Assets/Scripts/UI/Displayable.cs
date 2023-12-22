@@ -6,12 +6,7 @@ using DG.Tweening;
 
 public class Displayable : MonoBehaviour
 {
-    public enum State {
-        visible,
-        hidden,
-        none,
-    }
-    public State state;
+    public bool visible;
     public float fade_duration = 0.3f; 
     private  CanvasGroup canvasGroup;
 
@@ -41,10 +36,8 @@ public class Displayable : MonoBehaviour
     private Transform _transform;
     public Transform GetTransform{
         get {
-            if (_transform==null){
+            if (_transform==null)
                 _transform = transform;
-            }
-
             return _transform;
         }
     }
@@ -67,10 +60,12 @@ public class Displayable : MonoBehaviour
 
     public virtual void Show(){
         Group.SetActive(true);
+        visible = true;
     }    
 
-    public virtual void Hide(){
+    public virtual void Hide() {
         Group.SetActive(false);
+        visible = false;
     }
 
     public void FadeOut()

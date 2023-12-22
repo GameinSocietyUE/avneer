@@ -5,9 +5,16 @@ using UnityEngine;
 
 public class CanvasManager : MonoBehaviour {
     public enum Page {
+        Welcome_NoUser,
+        Welcome_Connected,
+        Register,
         Login,
         Chat,
         JobInfo,
+        Funds,
+        Formations,
+        SavedFormations,
+        SavedJobs,
         None,
     }
     [SerializeField] private Page currentPage = Page.None;
@@ -22,7 +29,7 @@ public class CanvasManager : MonoBehaviour {
     public void DisplayPage(Page page) {
         HidePage(page);
         currentPage = page;
-        GetPage(page).FadeIn();
+        GetPage(page).Show();
     }
 
     private void HidePage(Page page) {

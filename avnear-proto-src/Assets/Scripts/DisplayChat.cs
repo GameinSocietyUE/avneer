@@ -17,6 +17,7 @@ public class DisplayChat : Displayable
     public Side debug_side;
 
     public ScrollRect ScrollRect;
+    public RectTransform ScrollRect_RectTransform;
     [SerializeField] private Transform message_parent;
     [SerializeField] private ChatInfo[] chatInfos;
     [SerializeField] private NetworkManager networkManager;
@@ -32,10 +33,6 @@ public class DisplayChat : Displayable
         Instance = this;
     }
 
-    private void Start() {
-        DisplayAnswers.Instance.Hide();
-
-    }
 
     public override void Show() {
         base.Show();
