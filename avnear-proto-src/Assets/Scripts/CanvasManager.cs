@@ -15,6 +15,7 @@ public class CanvasManager : MonoBehaviour {
         Formations,
         SavedFormations,
         SavedJobs,
+        AvatarCreation,
         None,
     }
     [SerializeField] private Page currentPage = Page.None;
