@@ -39,15 +39,23 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject objectPoolContainer;
     [SerializeField] private GameObject emptyLastLine;
 
+    public CanvasManager canvasManager;
+
     public float messageDuration = 1f;
     public float timer;
     bool timerActive = false;
 
     //private List<MessageData> messagesList = new List<MessageData>();
     [SerializeField] private QuestionData[] currentChatList;
-    private int chatIndex = 0; 
+    private int chatIndex = 0;
+
+    public string loginToken = "";
+    private string username;
+    private string password;
 
     private List<AnswerContainer> answerScriptList = new List<AnswerContainer>();
+
+    private Dictionary<string, List<string>> interactions = new Dictionary<string, List<string>>();
 
     private void Awake()
     {
@@ -72,12 +80,47 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public bool IsConnected()
+    {
+        return (this.loginToken != null && this.loginToken != "");
+    }
+
+    public void Login()
+    {
+        // _networkManager.DoLogin("+33642424242", "Testpassword42!");
+        this.username = DisplayLogin.Instance.GetUserName();
+        this.password = DisplayLogin.Instance.GetPassword();
+        _networkManager.DoLogin(this.username, this.password);
+    }
+
+    public void Reconnect()
+    {
+        _networkManager.DoLogin(this.username, this.password);
+    }
+
+    public void LoginSuccess(string token)
+    {
+        this.loginToken = token;
+        canvasManager.DisplayPage(CanvasManager.Page.Welcome_Connected);
+    }
+
+    public void SendChatData()
+    {
+        _networkManager.PostChatData(interactions);
+    }
+
+    public void ChatResult()
+    {
+        Debug.Log("ChatResult");
+    }
+
     public void BuildChat(String jsonResponse)
     {
         Debug.Log("BuildChat: " + jsonResponse);
         chatList = JsonUtility.FromJson<QuestionList>(jsonResponse);
         currentChatList = chatList.questions;
         chatIndex = 0;
+        interactions.Clear();
         StartCoroutine(ChatCoroutine());
     }
 
@@ -152,9 +195,9 @@ public class GameManager : MonoBehaviour
         StartCoroutine(ForceScrollDown());*/
     }
 
-    private void SendAnswerToChat(GameObject messagePrefab, string id, List<QuestionData> answers)
+    private void SendAnswerToChat(GameObject messagePrefab, string id, QuestionData question)
     {
-        DisplayAnswers.Instance.Display(answers);
+        DisplayAnswers.Instance.Display(question);
         /*GameObject mess = Instantiate(answerMessagePrefab, Vector3.zero, Quaternion.identity, chatContent.transform);
         AnswerContainer ansScript = mess.GetComponent<AnswerContainer>();
         answerScriptList.Add(ansScript);
@@ -194,9 +237,13 @@ public class GameManager : MonoBehaviour
         emptyLastLine.transform.SetParent(chatContent.transform);
         StartCoroutine(ForceScrollDown());
     }*/
-    public void SelectAnswer(string message) {
+    public void SelectAnswer(string questionId, QuestionData answer) {
+        Debug.Log("SELECT ANSWER QuestionId:" + questionId + " answerId: " + answer.id + " " + answer.label + " " + answer.button);
+        List<string> answerIdList = new List<string>();
+        answerIdList.Add(answer.id);
+        interactions.Add(questionId, answerIdList);
         DisplayAnswers.Instance.FadeOut();
-        DisplayChat.Instance.AddMessage(message, DisplayChat.Side.User);
+        DisplayChat.Instance.AddMessage(answer.label, DisplayChat.Side.User);
     }
 
     public void SelectAnswer(GameObject answerContainer, AnswerContainer answerScript)
@@ -239,7 +286,7 @@ public class GameManager : MonoBehaviour
             // wait for user answer
             if (message.answers != null && message.answers.Count > 0) {
                 yield return new WaitForSeconds(3f);
-                DisplayAnswers.Instance.Display(message.answers);
+                DisplayAnswers.Instance.Display(message);
                 while (DisplayAnswers.Instance.visible)
                     yield return null;
                 yield return new WaitForSeconds(1f);
@@ -253,8 +300,8 @@ public class GameManager : MonoBehaviour
                     break;
                 yield return null;
 
-                Debug.Log($"timer : {timer}");
-                Debug.Log($"pressing mouse : {Input.GetMouseButtonDown(0)}");
+                //Debug.Log($"timer : {timer}");
+                //Debug.Log($"pressing mouse : {Input.GetMouseButtonDown(0)}");
             }
             yield return new WaitForEndOfFrame();
             EndTimer();
@@ -264,7 +311,8 @@ public class GameManager : MonoBehaviour
         }
 
         Debug.Log($"finished chat");
-        DisplayMessage.Instance.Display("Chat ended");
+        DisplayMessage.Instance.Display("Chat ended. Waiting for result ...");
+        this.SendChatData();
     }
 
     void StartTimer() {
@@ -299,7 +347,7 @@ public class GameManager : MonoBehaviour
             if (message.answers != null && message.answers.Count > 0)
             {
                 yield return new WaitForSeconds(1f);
-                this.SendAnswerToChat(answerMessagePrefab, message.id, message.answers);
+                this.SendAnswerToChat(answerMessagePrefab, message.id, message);
             }
             else
             {

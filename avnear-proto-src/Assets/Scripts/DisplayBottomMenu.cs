@@ -25,6 +25,20 @@ public class DisplayBottomMenu : Displayable
     }
 
     public void TriggerBottomBar(int i) {
-        DisplayMessage.Instance.Display($"bottom bar button : {i}");
+        if (i == 1)
+        {
+            if (GameManager.Instance.IsConnected())
+            {
+                GameManager.Instance.canvasManager.DisplayPage(CanvasManager.Page.Welcome_Connected);
+            }
+            else
+            {
+                GameManager.Instance.canvasManager.DisplayPage(CanvasManager.Page.Welcome_NoUser);
+            }
+        }
+        else
+        {
+            DisplayMessage.Instance.Display($"bottom bar button : {i}");
+        }
     }
 }

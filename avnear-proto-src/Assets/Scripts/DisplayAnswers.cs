@@ -49,12 +49,13 @@ public class DisplayAnswers : Displayable {
         }
     }
 
-    public void Display(List<QuestionData> answers) {
+    public void Display(QuestionData message) {
         FadeIn();
         foreach (var da in pool) {
             da.Hide();
         }
-        StartCoroutine(DisplayCoroutine(answers));
+        List<QuestionData> answers = message.answers;
+        StartCoroutine(DisplayCoroutine(answers, message.id));
 
         Vector2 s = DisplayChat.Instance.ScrollRect_RectTransform.sizeDelta;
         s.y -= rectTransform.sizeDelta.y;
@@ -62,7 +63,7 @@ public class DisplayAnswers : Displayable {
         DisplayChat.Instance.ScrollRect.verticalNormalizedPosition = verticaltest;
     }
 
-    IEnumerator DisplayCoroutine(List<QuestionData> answers) {
+    IEnumerator DisplayCoroutine(List<QuestionData> answers, string questionId) {
 
         FadeIn();
         /*rectTransform.anchoredPosition = Vector2.up * fadeIn_Decal;
@@ -76,8 +77,17 @@ public class DisplayAnswers : Displayable {
             }
 
             pool[i].Show();
-            pool[i].ui_text.text = answers[i].label;
-            pool[i].id = i;
+            if (answers[i].button != null && answers[i].button != "")
+            {
+                pool[i].ui_text.text = answers[i].button;
+            }
+            else
+            {
+                pool[i].ui_text.text = answers[i].label;
+            }  
+            pool[i].id = answers[i].id;
+            pool[i].answer = answers[i];
+            pool[i].questionId = questionId;
             pool[i].CanvasGroup.alpha = 0f;
         }
 

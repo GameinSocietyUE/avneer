@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class DisplayButton : Displayable, IPointerClickHandler
-{   
+{
+    public string buttonName;
     public Displayable showTarget;
     public Displayable hideTarget;
 
@@ -26,7 +27,12 @@ public class DisplayButton : Displayable, IPointerClickHandler
         {
             return;
         }
-
+        if (buttonName != null && buttonName.Equals("login"))
+        {
+            Debug.Log("Test login click");
+            GameManager.Instance.Login();
+            return;
+        }
         Trigger();   
     }
     

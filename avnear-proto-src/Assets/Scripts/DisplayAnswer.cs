@@ -5,11 +5,13 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class DisplayAnswer : Displayable, IPointerClickHandler {
-    public int id;
+    public string id;
     public TextMeshProUGUI ui_text;
+    public QuestionData answer;
+    public string questionId;
 
     public void OnPointerClick(PointerEventData eventData) {
         Tween.Bounce(GetTransform);
-        GameManager.Instance.SelectAnswer(ui_text.text);
+        GameManager.Instance.SelectAnswer(questionId, answer);
     }
 }

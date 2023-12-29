@@ -16,6 +16,7 @@ public class QuestionData
 
     public string id;
     public string label;
+    public string button;
     public List<Metadata> metadata;
     public List<QuestionData> answers;
 }
