@@ -2361,6 +2361,10 @@ MonoBehaviour:
   salary_Obj: {fileID: 0}
   save_Obj: {fileID: 0}
   duration: {x: 0, y: 0}
+  displayJobDescription: {fileID: 1995490252}
+  jobTitle: {fileID: 1503669673}
+  jobDurationMin: {fileID: 1343225862}
+  jobDurationMax: {fileID: 1660305186}
 --- !u!1001 &215225193
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4073,6 +4077,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 743635600}
     m_Modifications:
     - target: {fileID: 4156682567473651626, guid: d960423e089717f46aca35d7d0d5ef08,
@@ -4196,6 +4201,9 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d960423e089717f46aca35d7d0d5ef08, type: 3}
 --- !u!224 &382706770 stripped
 RectTransform:
@@ -5438,7 +5446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bd7f47a3e136df439659861eee268a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentPage: 10
+  currentPage: 0
   pages:
   - {fileID: 1868885507}
   - {fileID: 486045131}
@@ -9178,7 +9186,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -12518,7 +12528,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _apiKey: 9520095c06677aeccf2bd72be5ba941e
   _uriGetChat: https://api.avneer.com/scenarios/1ee89ec4-1209-6df4-a407-f328a7e43d7c
-  _uriSendResult: 
 --- !u!4 &985723188
 Transform:
   m_ObjectHideFlags: 0
@@ -15278,6 +15287,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 743635600}
     m_Modifications:
     - target: {fileID: 1129145824613816229, guid: e27499bbadb94e6448a7bde25c8480eb,
@@ -15407,6 +15417,9 @@ PrefabInstance:
       value: Change Genre Button (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e27499bbadb94e6448a7bde25c8480eb, type: 3}
 --- !u!1 &1262862828
 GameObject:
@@ -15900,6 +15913,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 743635600}
     m_Modifications:
     - target: {fileID: 4156682567473651626, guid: d960423e089717f46aca35d7d0d5ef08,
@@ -16023,6 +16037,9 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d960423e089717f46aca35d7d0d5ef08, type: 3}
 --- !u!224 &1329975678 stripped
 RectTransform:
@@ -19748,7 +19765,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 19.7
+  m_fontSize: 16.1
   m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -24842,6 +24859,9 @@ MonoBehaviour:
   transition_duration: 0.5
   zoomButton: {fileID: 227112480}
   unzoomButton: {fileID: 1836515140}
+  desc: 
+  descFull: 
+  jobDesc: {fileID: 504431837}
 --- !u!1 &2005148145
 GameObject:
   m_ObjectHideFlags: 0
@@ -28299,6 +28319,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 743635600}
     m_Modifications:
     - target: {fileID: 4156682568839836545, guid: d960423e089717f46aca35d7d0d5ef08,
@@ -28412,6 +28433,9 @@ PrefabInstance:
       value: Change Look Button
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d960423e089717f46aca35d7d0d5ef08, type: 3}
 --- !u!1001 &4982053190891547881
 PrefabInstance:
@@ -29853,6 +29877,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 743635600}
     m_Modifications:
     - target: {fileID: 2005666323315367799, guid: e27499bbadb94e6448a7bde25c8480eb,
@@ -29971,4 +29996,7 @@ PrefabInstance:
       value: Change Genre Button
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e27499bbadb94e6448a7bde25c8480eb, type: 3}

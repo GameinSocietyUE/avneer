@@ -12,7 +12,6 @@ public class NetworkManager : MonoBehaviour
 {
     [SerializeField] private string _apiKey;
     [SerializeField] private string _uriGetChat;
-    [SerializeField] private string _uriSendResult;
 
     private Dictionary<string, string> Endpoints = new Dictionary<string, string>
     {
@@ -46,34 +45,6 @@ public class NetworkManager : MonoBehaviour
                     Debug.Log(pages[page] + ":\nReceived: " + webRequest.downloadHandler.text);
                     GameManager.Instance.BuildChat(webRequest.downloadHandler.text);
                     webRequest.Dispose();
-                    break;
-            }
-        }
-    }
-
-    public IEnumerator PostChatData()
-    {
-        string postData = "";
-        using (UnityWebRequest webRequest = UnityWebRequest.Post(_uriSendResult, postData, "application/json"))
-        {
-            webRequest.SetRequestHeader("X-API-KEY", _apiKey);
-            yield return webRequest.SendWebRequest();
-
-            string[] pages = _uriGetChat.Split('/');
-            int page = pages.Length - 1;
-
-            switch (webRequest.result)
-            {
-                case UnityWebRequest.Result.ConnectionError:
-                case UnityWebRequest.Result.DataProcessingError:
-                    Debug.LogError(pages[page] + ": Error: " + webRequest.error);
-                    break;
-                case UnityWebRequest.Result.ProtocolError:
-                    Debug.LogError(pages[page] + ": HTTP Error: " + webRequest.error);
-                    break;
-                case UnityWebRequest.Result.Success:
-                    Debug.Log(pages[page] + ":\nReceived: " + webRequest.downloadHandler.text);
-                    //GameManager.Instance.BuildChat(webRequest.downloadHandler.text);
                     break;
             }
         }
@@ -134,8 +105,8 @@ public class NetworkManager : MonoBehaviour
     public void HandleError(string responseCall, string errorData)
     {
         Debug.Log("Handle error for: " + responseCall + " error: " + errorData);
-        //ErrorResponse errorResponse = JsonUtility.FromJson<ErrorResponse>(errorData);
-        ErrorResponse errorResponse = JsonConvert.DeserializeObject<ErrorResponse>(errorData);
+        ErrorResponse errorResponse = JsonUtility.FromJson<ErrorResponse>(errorData);
+        //ErrorResponse errorResponse = JsonConvert.DeserializeObject<ErrorResponse>(errorData);
         if (responseCall.Equals("LOGIN"))
         {
             if (errorResponse != null && errorResponse.message != null && errorResponse.message.Equals("Identifiants invalides."))
@@ -164,7 +135,12 @@ public class NetworkManager : MonoBehaviour
         {
             Debug.Log("Response from POSTCHAT");
             Debug.Log(responseData);
-            GameManager.Instance.ChatResult();
+            //MatchingResponseData matchingResponseData = JsonUtility.FromJson<MatchingResponseData>(responseData);
+            MatchingResponseData matchingResponseData = JsonConvert.DeserializeObject<MatchingResponseData>(responseData, new JsonSerializerSettings
+            {
+                NullValueHandling = NullValueHandling.Ignore
+            });
+            GameManager.Instance.ChatResult(matchingResponseData);
         }
     }
 

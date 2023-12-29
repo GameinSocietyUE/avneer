@@ -33,7 +33,7 @@ public class CanvasManager : MonoBehaviour {
         GetPage(page).Show();
     }
 
-    private void HidePage(Page page) {
+    public void HidePage(Page page) {
         if (page == Page.None)
             return;
         

@@ -109,9 +109,22 @@ public class GameManager : MonoBehaviour
         _networkManager.PostChatData(interactions);
     }
 
-    public void ChatResult()
+    public void ChatResult(MatchingResponseData matchingResponseData)
     {
         Debug.Log("ChatResult");
+        //List<MatchingResponseData.Recommendation> recommendations = matchingResponseData.recommendations;
+        Debug.Log(matchingResponseData);
+        Debug.Log(matchingResponseData.hash);
+        Debug.Log(matchingResponseData.recommendation);
+        Debug.Log(matchingResponseData.recommendation.Count);
+        MatchingResponseData.Recommendation recommendation = matchingResponseData.recommendation[0];
+        Debug.Log(recommendation.score + " " + recommendation.identifier + " " + recommendation.metadata.libelle_masculin + recommendation.metadata.formats_courts["format_court"][0].descriptif);
+        //(string jobTitle, string jobDesc, string jobDescFull, string jobDurationMin, string jobDurationMax)
+        DisplayJobInfo.Instance.SetJobInfos(recommendation.metadata.libelle_masculin, recommendation.metadata.formats_courts["format_court"][0].descriptif,
+            recommendation.metadata.formats_courts["format_court"][1].descriptif, recommendation.metadata.niveau_acces_min.libelle, recommendation.metadata.niveau_acces_min.libelle);
+        DisplayMessage.Instance.Hide();
+        DisplayChat.Instance.Hide();
+        canvasManager.DisplayPage(CanvasManager.Page.JobInfo);
     }
 
     public void BuildChat(String jsonResponse)
@@ -239,11 +252,14 @@ public class GameManager : MonoBehaviour
     }*/
     public void SelectAnswer(string questionId, QuestionData answer) {
         Debug.Log("SELECT ANSWER QuestionId:" + questionId + " answerId: " + answer.id + " " + answer.label + " " + answer.button);
-        List<string> answerIdList = new List<string>();
-        answerIdList.Add(answer.id);
-        interactions.Add(questionId, answerIdList);
-        DisplayAnswers.Instance.FadeOut();
-        DisplayChat.Instance.AddMessage(answer.label, DisplayChat.Side.User);
+        if (!interactions.ContainsKey(questionId))
+        {
+            List<string> answerIdList = new List<string>();
+            answerIdList.Add(answer.id);
+            interactions.Add(questionId, answerIdList);
+            DisplayAnswers.Instance.FadeOut();
+            DisplayChat.Instance.AddMessage(answer.label, DisplayChat.Side.User);
+        }
     }
 
     public void SelectAnswer(GameObject answerContainer, AnswerContainer answerScript)
