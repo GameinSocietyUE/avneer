@@ -25,8 +25,11 @@ public class DisplayBottomMenu : Displayable
     }
 
     public void TriggerBottomBar(int i) {
-        if (i == 1)
+        Debug.Log("Bottom button clicked: " + i);
+        if (i == 0)
         {
+            GameManager.Instance.PauseChat();
+            DisplayChat.Instance.Hide();
             if (GameManager.Instance.IsConnected())
             {
                 GameManager.Instance.canvasManager.DisplayPage(CanvasManager.Page.Welcome_Connected);
@@ -35,6 +38,17 @@ public class DisplayBottomMenu : Displayable
             {
                 GameManager.Instance.canvasManager.DisplayPage(CanvasManager.Page.Welcome_NoUser);
             }
+        }
+        else if (i == 1)
+        {
+            GameManager.Instance.RunChat();
+            GameManager.Instance.canvasManager.DisplayPage(CanvasManager.Page.Chat);
+        }
+        else if (i == 2)
+        {
+            GameManager.Instance.PauseChat();
+            DisplayChat.Instance.Hide();
+            GameManager.Instance.canvasManager.DisplayPage(CanvasManager.Page.Funds);
         }
         else
         {

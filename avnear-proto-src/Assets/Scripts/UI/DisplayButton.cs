@@ -33,6 +33,13 @@ public class DisplayButton : Displayable, IPointerClickHandler
             GameManager.Instance.Login();
             return;
         }
+        else if (buttonName != null && buttonName.Equals("chat"))
+        {
+            Debug.Log("Click chat button, reset and show");
+            hideTarget?.FadeOut();
+            DisplayChat.Instance.ResetChatAndShow();
+            return;
+        }
         Trigger();   
     }
     

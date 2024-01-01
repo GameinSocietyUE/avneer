@@ -28,7 +28,7 @@ public class CanvasManager : MonoBehaviour {
     }
 
     public void DisplayPage(Page page) {
-        HidePage(page);
+        HidePage(currentPage);
         currentPage = page;
         GetPage(page).Show();
     }

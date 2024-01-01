@@ -57,6 +57,10 @@ public class GameManager : MonoBehaviour
 
     private Dictionary<string, List<string>> interactions = new Dictionary<string, List<string>>();
 
+    public bool runChat = true;
+
+    public QuestionData currentMessage = null;
+
     private void Awake()
     {
         _instance = this;
@@ -137,6 +141,44 @@ public class GameManager : MonoBehaviour
         StartCoroutine(ChatCoroutine());
     }
 
+    public void PauseChat()
+    {
+        runChat = false;
+    }
+
+    public void RunChat()
+    { 
+        if (currentMessage.answers != null && currentMessage.answers.Count > 0)
+        {
+            Debug.Log("Current message answer, displayAnswer");
+            if (!DisplayAnswers.Instance.visible) //Fully visible with all questions
+            {
+                StartCoroutine(ResumeDisplayAnswer());
+            }
+        }
+        else
+        {
+            DisplayChat.Instance.StopWaitingAnim(currentMessage.id);
+            runChat = true;
+        }   
+    }
+
+    private IEnumerator ResumeDisplayAnswer()
+    {
+        yield return new WaitForSeconds(1.5f);
+        DisplayAnswers.Instance.Display(currentMessage);
+    }
+
+    public void ResetChat()
+    {
+
+    }
+
+    public bool IsChatRunning()
+    {
+        return runChat;
+    }
+
 
     /*private void MakeMessageList()
     {
@@ -200,7 +242,8 @@ public class GameManager : MonoBehaviour
 
     private void SendMessageToChat(GameObject messagePrefab, string messageText, float messageWidth, float messageHeight)
     {
-        DisplayChat.Instance.AddMessage(messageText, DisplayChat.Side.Bot);
+        //DisplayChat.Instance.AddMessage(messageText, DisplayChat.Side.Bot);
+
         /*GameObject mess = Instantiate(messagePrefab, Vector3.zero, Quaternion.identity, chatContent.transform);
         Message messageScript = mess.GetComponent<Message>();
         messageScript.SetMessage(messageText);
@@ -258,26 +301,27 @@ public class GameManager : MonoBehaviour
             answerIdList.Add(answer.id);
             interactions.Add(questionId, answerIdList);
             DisplayAnswers.Instance.FadeOut();
-            DisplayChat.Instance.AddMessage(answer.label, DisplayChat.Side.User);
+            DisplayChat.Instance.AddMessage(answer, DisplayChat.Side.User);
+            runChat = true;
         }
     }
 
     public void SelectAnswer(GameObject answerContainer, AnswerContainer answerScript)
     {
-        Debug.Log("SelectAnswer: " + answerScript.selectedLabel);
+        /*Debug.Log("SelectAnswer: " + answerScript.selectedLabel);
         string messageText = answerScript.selectedLabel;
         answerContainer.SetActive(false);
         this.SendMessageToChat(userMessagePrefab, messageText, 400f, 115f);
-        SendNextMessage();
+        SendNextMessage();*/
     }
 
     public void SendNextMessage()
     {
         var message = currentChatList[chatIndex];
-        DisplayChat.Instance.AddMessage(message.label, DisplayChat.Side.Bot);
+        DisplayChat.Instance.AddMessage(message, DisplayChat.Side.Bot);
         chatIndex++;
         return;
-        if (chatIndex < currentChatList.Length - 1)
+        /*if (chatIndex < currentChatList.Length - 1)
         {
             StartCoroutine(SendMessage(currentChatList[chatIndex]));
             chatIndex++;
@@ -288,32 +332,36 @@ public class GameManager : MonoBehaviour
             //Spawn send result button
             emptyLastLine.transform.SetParent(chatContent.transform);
             StartCoroutine(ForceScrollDown());
-        }  
+        }*/ 
     }
 
     private IEnumerator ChatCoroutine() {
 
         while ( chatIndex < currentChatList.Length - 1) {
+            yield return new WaitUntil(() => runChat);
 
             // display bot message
             var message = currentChatList[chatIndex];
-            DisplayChat.Instance.AddMessage(message.label, DisplayChat.Side.Bot);
+            this.currentMessage = message;
+            DisplayChat.Instance.AddMessage(message, DisplayChat.Side.Bot);
+
+            yield return new WaitUntil(() => runChat);
 
             // wait for user answer
             if (message.answers != null && message.answers.Count > 0) {
                 yield return new WaitForSeconds(3f);
                 DisplayAnswers.Instance.Display(message);
-                while (DisplayAnswers.Instance.visible)
-                    yield return null;
+                //while (DisplayAnswers.Instance.visible)
+                //    yield return null;
+                runChat = false;
                 yield return new WaitForSeconds(1f);
-
             }
 
             StartTimer();
             // wait for input or time
             while (timer < messageDuration) {
-                if (Input.GetMouseButtonDown(0))
-                    break;
+                //if (Input.GetMouseButtonDown(0))
+                //    break;
                 yield return null;
 
                 //Debug.Log($"timer : {timer}");
@@ -321,14 +369,15 @@ public class GameManager : MonoBehaviour
             }
             yield return new WaitForEndOfFrame();
             EndTimer();
-
-            Debug.Log($"clicked");
             ++chatIndex;
         }
 
-        Debug.Log($"finished chat");
-        DisplayMessage.Instance.Display("Chat ended. Waiting for result ...");
-        this.SendChatData();
+        if (chatIndex == currentChatList.Length - 1)
+        {
+            Debug.Log($"finished chat");
+            DisplayMessage.Instance.Display("Chat ended. Waiting for result ...");
+            this.SendChatData();
+        }
     }
 
     void StartTimer() {

@@ -50,17 +50,23 @@ public class DisplayAnswers : Displayable {
     }
 
     public void Display(QuestionData message) {
-        FadeIn();
-        foreach (var da in pool) {
-            da.Hide();
+        Debug.Log("DisplayAnswer.Display() start active ?: " + this.gameObject.activeInHierarchy);
+        if (this.gameObject.activeInHierarchy)
+        {
+            Debug.Log("DisplayAnswer.Display(): " + message.answers.Count);
+            FadeIn();
+            foreach (var da in pool)
+            {
+                da.Hide();
+            }
+            List<QuestionData> answers = message.answers;
+            Debug.Log("DisplayAnswer.Display(): StartCoroutine");
+            StartCoroutine(DisplayCoroutine(answers, message.id));
+            Vector2 s = DisplayChat.Instance.ScrollRect_RectTransform.sizeDelta;
+            s.y -= rectTransform.sizeDelta.y;
+            DisplayChat.Instance.ScrollRect_RectTransform.sizeDelta = s;
+            DisplayChat.Instance.ScrollRect.verticalNormalizedPosition = verticaltest;
         }
-        List<QuestionData> answers = message.answers;
-        StartCoroutine(DisplayCoroutine(answers, message.id));
-
-        Vector2 s = DisplayChat.Instance.ScrollRect_RectTransform.sizeDelta;
-        s.y -= rectTransform.sizeDelta.y;
-        DisplayChat.Instance.ScrollRect_RectTransform.sizeDelta = s;
-        DisplayChat.Instance.ScrollRect.verticalNormalizedPosition = verticaltest;
     }
 
     IEnumerator DisplayCoroutine(List<QuestionData> answers, string questionId) {

@@ -37,6 +37,15 @@ public class DisplayChatMessage : Displayable {
 
     }
 
+    public void StopWaitingAnim()
+    {
+        if (waiting_Obj != null)
+        {
+            waiting_Obj.SetActive(false);
+            DisplayDelay();
+        }
+    }
+
     private void DisplayDelay() {
         background_CanvasGroup.DOFade(1f, transition_duration);
         background_RectTransform.anchoredPosition = Vector3.right * -transition_decal;

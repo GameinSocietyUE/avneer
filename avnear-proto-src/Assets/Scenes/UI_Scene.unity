@@ -859,7 +859,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!1 &55963822
 GameObject:
@@ -2340,7 +2340,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &180364390
 MonoBehaviour:
@@ -3846,6 +3846,7 @@ MonoBehaviour:
   timer: 0
   currentChatList: []
   loginToken: 
+  runChat: 1
 --- !u!4 &370218218
 Transform:
   m_ObjectHideFlags: 0
@@ -4802,7 +4803,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &441575240
 MonoBehaviour:
@@ -15903,7 +15904,7 @@ MonoBehaviour:
   visible: 0
   fade_duration: 0.3
   group: {fileID: 0}
-  buttonName: 
+  buttonName: chat
   showTarget: {fileID: 1422883429}
   hideTarget: {fileID: 486045131}
   locked: 0
@@ -17999,7 +18000,6 @@ GameObject:
   - component: {fileID: 1467360398}
   - component: {fileID: 1467360401}
   - component: {fileID: 1467360400}
-  - component: {fileID: 1467360402}
   m_Layer: 5
   m_Name: Bottom Bar Button
   m_TagString: Untagged
@@ -18081,7 +18081,19 @@ MonoBehaviour:
   - eventID: 4
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 2143911842}
+          m_TargetAssemblyTypeName: DisplayBottomMenu, Assembly-CSharp
+          m_MethodName: TriggerBottomBar
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &1467360401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18097,26 +18109,6 @@ MonoBehaviour:
   visible: 0
   fade_duration: 0.3
   group: {fileID: 0}
---- !u!114 &1467360402
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1467360396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 610e26f487b50b942a9a0859866ee433, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  visible: 0
-  fade_duration: 0.3
-  group: {fileID: 0}
-  buttonName: 
-  showTarget: {fileID: 1868885507}
-  hideTarget: {fileID: 1422883429}
-  locked: 0
-  lockOnEnable: 0
 --- !u!1 &1483968944
 GameObject:
   m_ObjectHideFlags: 0
@@ -22375,7 +22367,7 @@ MonoBehaviour:
   visible: 0
   fade_duration: 0.3
   group: {fileID: 0}
-  buttonName: 
+  buttonName: chat
   showTarget: {fileID: 1422883429}
   hideTarget: {fileID: 1868885507}
   locked: 0
@@ -24364,7 +24356,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &1975034484
 MonoBehaviour:
@@ -24859,8 +24851,6 @@ MonoBehaviour:
   transition_duration: 0.5
   zoomButton: {fileID: 227112480}
   unzoomButton: {fileID: 1836515140}
-  desc: 
-  descFull: 
   jobDesc: {fileID: 504431837}
 --- !u!1 &2005148145
 GameObject:
@@ -25243,7 +25233,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &2025255344
 MonoBehaviour:

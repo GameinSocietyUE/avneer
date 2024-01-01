@@ -22,6 +22,8 @@ public class DisplayChat : Displayable
     [SerializeField] private ChatInfo[] chatInfos;
     [SerializeField] private NetworkManager networkManager;
 
+    private Dictionary<string, DisplayChatMessage> messagesDisplay = new Dictionary<string, DisplayChatMessage>();
+
     [System.Serializable]
     public class ChatInfo {
         public DisplayChatMessage prefab;
@@ -36,8 +38,23 @@ public class DisplayChat : Displayable
 
     public override void Show() {
         base.Show();
-        foreach (var item in chatInfos) {
+        /*foreach (var item in chatInfos) {
             foreach (var dM in item.pool) {
+                dM.Hide();
+            }
+            item.index = 0;
+        }
+        Debug.Log($"ONCE");
+        StartCoroutine(networkManager.GetChatData());*/
+    }
+
+    public void ResetChatAndShow()
+    {
+        base.Show();
+        foreach (var item in chatInfos)
+        {
+            foreach (var dM in item.pool)
+            {
                 dM.Hide();
             }
             item.index = 0;
@@ -46,7 +63,7 @@ public class DisplayChat : Displayable
         StartCoroutine(networkManager.GetChatData());
     }
 
-    public void AddMessage(string message, Side side) {
+    public void AddMessage(QuestionData message, Side side) {
 
         var info = chatInfos[(int)side];
 
@@ -55,8 +72,16 @@ public class DisplayChat : Displayable
         }
 
         var displayMessage = info.pool[info.index];
-        displayMessage.Display(message);
+        displayMessage.Display(message.label);
+        messagesDisplay.Add(message.id, displayMessage);
         ++info.index;
+    }
 
+    public void StopWaitingAnim(string messageId)
+    {
+        if (messagesDisplay.ContainsKey(messageId))
+        {
+            messagesDisplay[messageId].StopWaitingAnim();
+        }
     }
 }
