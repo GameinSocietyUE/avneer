@@ -22,7 +22,7 @@ public class DisplayChat : Displayable
     [SerializeField] private ChatInfo[] chatInfos;
     [SerializeField] private NetworkManager networkManager;
 
-    private Dictionary<string, DisplayChatMessage> messagesDisplay = new Dictionary<string, DisplayChatMessage>();
+    public Dictionary<string, DisplayChatMessage> messagesDisplay = new Dictionary<string, DisplayChatMessage>();
 
     [System.Serializable]
     public class ChatInfo {
@@ -60,7 +60,8 @@ public class DisplayChat : Displayable
             item.index = 0;
         }
         Debug.Log($"ONCE");
-        StartCoroutine(networkManager.GetChatData());
+        //StartCoroutine(networkManager.GetChatData());
+        networkManager.GetChatScenario("1ee89ec4-1209-6df4-a407-f328a7e43d7c");
     }
 
     public void AddMessage(QuestionData message, Side side) {

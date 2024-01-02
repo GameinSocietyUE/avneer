@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using static MatchingResponseData;
 
 public class DisplayJobInfo : Displayable
 {
@@ -16,23 +17,69 @@ public class DisplayJobInfo : Displayable
     public GameObject save_Obj;
     public Vector2Int duration;
 
+    public GameObject formationButton;
+
+    public List<FormationMinRequise> formations;
+    public Dictionary<string, FormationMinRequise> formationsMap = new Dictionary<string, FormationMinRequise>();
+    public List<FormationData> formationDatas = new List<FormationData>();
+    public Dictionary<string, FormationData> formationDataMap = new Dictionary<string, FormationData>();
+
     [SerializeField] private DisplayJobDescription displayJobDescription;
     [SerializeField] private TextMeshProUGUI jobTitle;
     [SerializeField] private TextMeshProUGUI jobDurationMin;
     [SerializeField] private TextMeshProUGUI jobDurationMax;
-    private string jobDesc;
-    private string jobDescFull;
+
+    public string jobTitleStr;
+
+    private int formationUpdateIndex = 0;
 
     public void Display() {
 
     }
 
-    public void SetJobInfos(string jobTitle, string jobDesc, string jobDescFull, string jobDurationMin, string jobDurationMax)
+    public void SetJobInfos(string jobTitle, string jobDesc, string jobDescFull, string jobDurationMin, string jobDurationMax, List<FormationMinRequise> formations)
     {
+        formationButton.SetActive(false);
+        formationUpdateIndex = 0;
+        this.jobTitleStr = jobTitle;
         this.jobTitle.text = jobTitle;
         this.jobDurationMin.text = jobDurationMin;
         this.jobDurationMax.text = jobDurationMax;
         displayJobDescription.SetDesc(jobDesc, jobDescFull);
+        this.formations = formations;
+        foreach (FormationMinRequise formation in formations)
+        {
+            formationsMap.Add(formation.id, formation);
+        }
+    }
+
+    public void UpdateFormationData(TrainingsResponseData trainingsResponseData)
+    {
+        FormationMinRequise formation = formationsMap[trainingsResponseData.identifier];
+        FormationData formationData = new FormationData(formation.id, "", "", formation.libelle, null, trainingsResponseData.parcoursup);
+        formationDataMap.Add(formation.id, formationData);
+        formationUpdateIndex++;
+        if (formationUpdateIndex == formations.Count)
+        {
+            foreach (FormationMinRequise formationMinRequise in formations)
+            {
+                formationDatas.Add(formationDataMap[formationMinRequise.id]);
+            }
+            formationButton.SetActive(true);
+        }
+    }
+
+    public bool AllFormationDataUpdated()
+    {
+        if (formationUpdateIndex == formations.Count - 1)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
     }
 
     public void SetJobTitle(string jobTitle)

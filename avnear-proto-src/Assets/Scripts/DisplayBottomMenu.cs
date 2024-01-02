@@ -29,7 +29,7 @@ public class DisplayBottomMenu : Displayable
         if (i == 0)
         {
             GameManager.Instance.PauseChat();
-            DisplayChat.Instance.Hide();
+            /*DisplayChat.Instance.Hide();
             if (GameManager.Instance.IsConnected())
             {
                 GameManager.Instance.canvasManager.DisplayPage(CanvasManager.Page.Welcome_Connected);
@@ -37,7 +37,8 @@ public class DisplayBottomMenu : Displayable
             else
             {
                 GameManager.Instance.canvasManager.DisplayPage(CanvasManager.Page.Welcome_NoUser);
-            }
+            }*/
+            GameManager.Instance.TestChatResult();
         }
         else if (i == 1)
         {

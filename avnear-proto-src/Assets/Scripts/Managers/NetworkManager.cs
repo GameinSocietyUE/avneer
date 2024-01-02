@@ -7,6 +7,7 @@ using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 using UnityEngine.Networking;
 using Newtonsoft.Json;
+using System.Net;
 
 public class NetworkManager : MonoBehaviour
 {
@@ -17,7 +18,8 @@ public class NetworkManager : MonoBehaviour
     {
         {"loginUrl", "https://api.avneer.com/authentication"},
         {"getChatUrl", "https://api.avneer.com/scenarios/"},
-        {"postChatData", "https://api.avneer.com/matchings"}
+        {"postChatData", "https://api.avneer.com/matchings"},
+        {"getTraining", "https://api.avneer.com/trainings/"}
     };
 
     public IEnumerator GetChatData()
@@ -50,6 +52,33 @@ public class NetworkManager : MonoBehaviour
         }
     }
 
+    private IEnumerator GetRequest(string uri, string responseCall)
+    {
+        using (UnityWebRequest webRequest = UnityWebRequest.Get(uri))
+        {
+            webRequest.SetRequestHeader("X-API-KEY", _apiKey);
+            yield return webRequest.SendWebRequest();
+            string response = webRequest.downloadHandler.text;
+            Debug.Log(webRequest.result + " response: " + response);
+            if (webRequest.result.Equals(UnityWebRequest.Result.Success))
+            {
+                HandleResponse(responseCall, response);
+            }
+            else if (webRequest.result.Equals(UnityWebRequest.Result.ProtocolError) || webRequest.result.Equals(UnityWebRequest.Result.DataProcessingError))
+            {
+                HandleError(responseCall, response);
+            }
+            else
+            {
+                //retry request
+            }
+
+
+            webRequest.Dispose();
+        }
+            
+    }
+
     private IEnumerator PostJson(string uri, object jsonData, string responseCall)
     {
         //string postData = JsonUtility.ToJson(jsonData);
@@ -69,7 +98,7 @@ public class NetworkManager : MonoBehaviour
         {
             HandleResponse(responseCall, response);
         }
-        else if (webRequest.result.Equals(UnityWebRequest.Result.ProtocolError))
+        else if (webRequest.result.Equals(UnityWebRequest.Result.ProtocolError) || webRequest.result.Equals(UnityWebRequest.Result.DataProcessingError))
         {
             HandleError(responseCall, response);
         }
@@ -131,16 +160,31 @@ public class NetworkManager : MonoBehaviour
             Debug.Log(token);
             GameManager.Instance.LoginSuccess(token);
         }
+        else if (responseCall.Equals("GETCHAT"))
+        {
+            GameManager.Instance.BuildChat(responseData);
+        }
         else if (responseCall.Equals("POSTCHAT"))
         {
             Debug.Log("Response from POSTCHAT");
             Debug.Log(responseData);
-            //MatchingResponseData matchingResponseData = JsonUtility.FromJson<MatchingResponseData>(responseData);
+            responseData = responseData.Replace("\"formations_min_requise\":null", "\"formations_min_requise\":{\"formation_min_requise\":[]}");
+            Debug.Log(responseData);
+            //Bug with formations_min_requise when its not a list (only one formation)
             MatchingResponseData matchingResponseData = JsonConvert.DeserializeObject<MatchingResponseData>(responseData, new JsonSerializerSettings
             {
                 NullValueHandling = NullValueHandling.Ignore
             });
             GameManager.Instance.ChatResult(matchingResponseData);
+        }
+        else if (responseCall.Equals("GETTRAINING"))
+        {
+            Debug.Log("Response from GETTRAINING: " + responseData);
+            TrainingsResponseData trainingsResponseData = JsonConvert.DeserializeObject<TrainingsResponseData>(responseData, new JsonSerializerSettings
+            {
+                NullValueHandling = NullValueHandling.Ignore
+            });
+            GameManager.Instance.GetTrainingDataSuccess(trainingsResponseData);
         }
     }
 
@@ -156,6 +200,16 @@ public class NetworkManager : MonoBehaviour
         matchingData.scenarioId = "1ee89ec4-1209-6df4-a407-f328a7e43d7c";
         matchingData.interactions = interactions;
         StartCoroutine(PostJson(Endpoints["postChatData"], matchingData, "POSTCHAT"));
+    }
+
+    public void GetChatScenario(string id)
+    {
+        StartCoroutine(GetRequest(Endpoints["getChatUrl"] + id, "GETCHAT"));
+    }
+
+    public void GetTrainingData(string id)
+    {
+        StartCoroutine(GetRequest(Endpoints["getTraining"] + id, "GETTRAINING"));
     }
 
     class UserLogin

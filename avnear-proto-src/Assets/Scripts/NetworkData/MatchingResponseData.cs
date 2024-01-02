@@ -24,6 +24,11 @@ public class MatchingResponseData
         public string libelle;
     }
 
+    /*public class FormationsMinRequise
+    {
+        public List<FormationMinRequise> formation_min_requise;
+    }*/
+
     public class MatchMetadata
     {
         public string resume;
@@ -35,7 +40,8 @@ public class MatchingResponseData
         public string libelle_feminin;
         public string libelle_masculin;
         public NiveauAccesMin niveau_acces_min;
-        //public Dictionary<string, List<FormationMinRequise>> formations_min_requise;
+        public Dictionary<string, List<FormationMinRequise>> formations_min_requise;
+        //public FormationsMinRequise formations_min_requise;
     }
 
     public class Recommendation

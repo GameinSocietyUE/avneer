@@ -2361,10 +2361,13 @@ MonoBehaviour:
   salary_Obj: {fileID: 0}
   save_Obj: {fileID: 0}
   duration: {x: 0, y: 0}
+  formationButton: {fileID: 1888444241}
+  formationDatas: []
   displayJobDescription: {fileID: 1995490252}
   jobTitle: {fileID: 1503669673}
   jobDurationMin: {fileID: 1343225862}
   jobDurationMax: {fileID: 1660305186}
+  jobTitleStr: 
 --- !u!1001 &215225193
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3842,11 +3845,16 @@ MonoBehaviour:
   objectPoolContainer: {fileID: 0}
   emptyLastLine: {fileID: 0}
   canvasManager: {fileID: 481972990}
-  messageDuration: 3
+  messageDuration: 2
   timer: 0
   currentChatList: []
   loginToken: 
   runChat: 1
+  currentMessage:
+    id: 
+    label: 
+    button: 
+    answers: []
 --- !u!4 &370218218
 Transform:
   m_ObjectHideFlags: 0
@@ -4828,14 +4836,16 @@ MonoBehaviour:
     type: 3}
   filterButtons: []
   formationDatas:
-  - schoolName: ecole
+  - formationId: 
+    schoolName: ecole
     schoolLocation: paris
     formationName: isart
     informations:
     - zethieuzh
     - fjezifjiz
     sup: 1
-  - schoolName: angouleme
+  - formationId: 
+    schoolName: angouleme
     schoolLocation: machin,
     formationName: truc
     informations:
@@ -4846,6 +4856,7 @@ MonoBehaviour:
     - sfd
     sup: 0
   displayFormations: []
+  jobName: 
   uiText_Title: {fileID: 59713467}
 --- !u!1 &464325459
 GameObject:
@@ -12945,6 +12956,7 @@ GameObject:
   - component: {fileID: 1041663652}
   - component: {fileID: 1041663651}
   - component: {fileID: 1041663650}
+  - component: {fileID: 1041663653}
   m_Layer: 5
   m_Name: Unzoom Button
   m_TagString: Untagged
@@ -13010,6 +13022,26 @@ RectTransform:
   m_AnchoredPosition: {x: -24.801193, y: -59.787315}
   m_SizeDelta: {x: 50.8925, y: 50.8925}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1041663653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041663646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 610e26f487b50b942a9a0859866ee433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visible: 0
+  fade_duration: 0.3
+  group: {fileID: 0}
+  buttonName: 
+  showTarget: {fileID: 180364390}
+  hideTarget: {fileID: 441575240}
+  locked: 0
+  lockOnEnable: 0
 --- !u!1 &1052935994
 GameObject:
   m_ObjectHideFlags: 0
@@ -23351,6 +23383,7 @@ GameObject:
   - component: {fileID: 1888444242}
   - component: {fileID: 1888444244}
   - component: {fileID: 1888444243}
+  - component: {fileID: 1888444245}
   m_Layer: 5
   m_Name: Parcours Button
   m_TagString: Untagged
@@ -23419,6 +23452,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1888444241}
   m_CullTransparentMesh: 1
+--- !u!114 &1888444245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888444241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34cbf5ec4e62cd2429c3cdb1112ccd3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1939942991
 GameObject:
   m_ObjectHideFlags: 0

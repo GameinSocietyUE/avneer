@@ -15,6 +15,8 @@ public class DisplayFormations : Displayable {
     public List<FormationData> formationDatas = new List<FormationData>();
     public List<DisplayFormation> displayFormations = new List<DisplayFormation>();
 
+    public string jobName;
+
     public TextMeshProUGUI uiText_Title;
 
     private void Awake() {
@@ -23,7 +25,7 @@ public class DisplayFormations : Displayable {
 
     public override void Show() {
         base.Show();
-        Display("formations", formationDatas, new List<string> { "filtre 1", "filtre 2", });
+        Display(jobName, formationDatas, new List<string> { "filtre 1", "filtre 2", });
     }
 
     public void Display(string name, List<FormationData> datas, List<string> filterNames) {
