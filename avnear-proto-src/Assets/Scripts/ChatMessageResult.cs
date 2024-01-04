@@ -92,9 +92,8 @@ public class ChatMessageResult : MonoBehaviour
 
             CultureInfo ci = (CultureInfo)CultureInfo.CurrentCulture.Clone();
             ci.NumberFormat.CurrencyDecimalSeparator = ".";
-            float score = float.Parse(currentRecommendation.score, NumberStyles.Any, ci);
-            int roundScore = Mathf.RoundToInt(score * 100);
-            //int score = Mathf.RoundToInt(float.Parse(currentRecommendation.score) * 100);
+            //float score = float.Parse(currentRecommendation.score, NumberStyles.Any, ci);
+            int roundScore = Mathf.RoundToInt(float.Parse(currentRecommendation.score, NumberStyles.Any, ci));
             uiText_FormationName.text = jobLibelle + "<br>Compatibilité " + roundScore + "%";
         }
     }

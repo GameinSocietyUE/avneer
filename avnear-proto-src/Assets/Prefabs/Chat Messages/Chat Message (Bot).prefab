@@ -82,7 +82,7 @@ MonoBehaviour:
   m_PixelsPerUnitMultiplier: 1.8
 --- !u!95 &1766660508221743125
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -99,7 +99,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1844112385462786894
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,7 +211,7 @@ RectTransform:
   - {fileID: 3421955744306498983}
   - {fileID: 2137810908340326271}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -229,7 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d492cedf535a21f40b42851fdd32a6bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: 0
+  visible: 0
   fade_duration: 0.3
   group: {fileID: 0}
   ui_text: {fileID: 2137810908900844490}
@@ -313,7 +314,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: abad3b47b0f53994b8f6612bca3b0e9c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fa4891d7cacb53d44b79e15264e4fe21, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -592,7 +593,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 231.3023, y: 0}
+  m_SizeDelta: {x: 197, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &2137810909127290519
 CanvasRenderer:

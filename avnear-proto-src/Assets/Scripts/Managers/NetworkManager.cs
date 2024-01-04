@@ -169,6 +169,7 @@ public class NetworkManager : MonoBehaviour
             Debug.Log("Response from POSTCHAT");
             Debug.Log(responseData);
             responseData = responseData.Replace("\"formations_min_requise\":null", "\"formations_min_requise\":{\"formation_min_requise\":[]}");
+            responseData = responseData.Replace("\"secteurs_activite\":null", "\"secteurs_activite\":{\"secteur_activite\":[]}");
             Debug.Log(responseData);
 
 

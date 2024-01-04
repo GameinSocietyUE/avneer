@@ -4834,7 +4834,7 @@ MonoBehaviour:
   formationParent: {fileID: 978701033}
   filterPrefab: {fileID: 3548294303074860824, guid: ac21938eaf45b2444b0782f828fffc22,
     type: 3}
-  formationPrefab: {fileID: 6196880781507093504, guid: 2266ac35cfd988747b4e6f5d6b281ae1,
+  formationPrefab: {fileID: 8451437474538013411, guid: 9da6a3118ad122a45937ed82dfbb7033,
     type: 3}
   filterButtons: []
   formationDatas:

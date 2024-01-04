@@ -24,15 +24,15 @@ public class MatchingResponseData
         public string libelle;
     }
 
-    /*public class FormationsMinRequise
+    public class SecteurActivite
     {
-        public List<FormationMinRequise> formation_min_requise;
-    }*/
+        public string id;
+        public string libelle;
+    }
 
     public class MatchMetadata
     {
         public string resume;
-        //public string synonymes;
         public string competences;
         public string first_salary;
         public Dictionary<string, List<FormatCourt>> formats_courts;
@@ -41,7 +41,7 @@ public class MatchingResponseData
         public string libelle_masculin;
         public NiveauAccesMin niveau_acces_min;
         public Dictionary<string, List<FormationMinRequise>> formations_min_requise;
-        //public FormationsMinRequise formations_min_requise;
+        //public Dictionary<string, List<SecteurActivite>> secteurs_activite;
     }
 
     public class Recommendation
