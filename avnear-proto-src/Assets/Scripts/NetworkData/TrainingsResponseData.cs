@@ -29,6 +29,7 @@ public class TrainingsResponseData
     public string studyLevel;
     public string certificationLevel;
     public bool parcoursup;
+    public bool apprenticeship;
     public TrainingMetadata metadata;
     public List<Establishment> establishments;
     public int bookmarksCount;

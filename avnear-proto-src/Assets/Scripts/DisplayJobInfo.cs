@@ -40,7 +40,18 @@ public class DisplayJobInfo : Displayable
     public void SetJobInfos(string jobTitle, string jobDesc, string jobDescFull, string jobDurationMin, string jobDurationMax, List<FormationMinRequise> formations)
     {
         formationButton.SetActive(false);
+        formationsMap.Clear();
+        formationDatas.Clear();
+        formationDataMap.Clear();
         formationUpdateIndex = 0;
+        DisplayFormations.Instance.formationDatas.Clear();
+        //DisplayFormations.Instance.formationParent.Clear   Check clear children
+        //Todo: optimize, quick fix
+        /*int pastFormationCount = DisplayFormations.Instance.formationParent.childCount;
+        for (int i = 0; i < pastFormationCount; i++)
+        {
+            Object.DestroyImmediate(DisplayFormations.Instance.formationParent.GetChild(i).gameObject);
+        }*/
         this.jobTitleStr = jobTitle;
         this.jobTitle.text = jobTitle;
         this.jobDurationMin.text = jobDurationMin;
@@ -49,14 +60,17 @@ public class DisplayJobInfo : Displayable
         this.formations = formations;
         foreach (FormationMinRequise formation in formations)
         {
-            formationsMap.Add(formation.id, formation);
+            if (!formationsMap.ContainsKey(formation.id))
+            {
+                formationsMap.Add(formation.id, formation);
+            }
         }
     }
 
     public void UpdateFormationData(TrainingsResponseData trainingsResponseData)
     {
         FormationMinRequise formation = formationsMap[trainingsResponseData.identifier];
-        FormationData formationData = new FormationData(formation.id, "", "", formation.libelle, null, trainingsResponseData.parcoursup);
+        FormationData formationData = new FormationData(formation.id, formation.libelle, trainingsResponseData.parcoursup, trainingsResponseData.apprenticeship, trainingsResponseData.metadata.duree_formation, trainingsResponseData.establishments.Count);
         formationDataMap.Add(formation.id, formationData);
         formationUpdateIndex++;
         if (formationUpdateIndex == formations.Count)

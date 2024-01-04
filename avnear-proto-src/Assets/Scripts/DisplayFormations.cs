@@ -25,7 +25,7 @@ public class DisplayFormations : Displayable {
 
     public override void Show() {
         base.Show();
-        Display(jobName, formationDatas, new List<string> { "filtre 1", "filtre 2", });
+        Display(jobName, formationDatas, new List<string> { "parcoursup", "apprentissage", });
     }
 
     public void Display(string name, List<FormationData> datas, List<string> filterNames) {

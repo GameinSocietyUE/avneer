@@ -3840,10 +3840,12 @@ MonoBehaviour:
     type: 3}
   answerMessagePrefab: {fileID: 7964889740653982066, guid: 7fa271096efa0654f848b2a5486aed64,
     type: 3}
-  chatContent: {fileID: 0}
+  chatContent: {fileID: 1135573915}
   scrollRect: {fileID: 1541184759}
   objectPoolContainer: {fileID: 0}
   emptyLastLine: {fileID: 0}
+  chatMatchResult: {fileID: 1401034252477614563, guid: e5e62e5e67f9ef645a12ab9d9c6c882b,
+    type: 3}
   canvasManager: {fileID: 481972990}
   messageDuration: 2
   timer: 0
@@ -4832,29 +4834,22 @@ MonoBehaviour:
   formationParent: {fileID: 978701033}
   filterPrefab: {fileID: 3548294303074860824, guid: ac21938eaf45b2444b0782f828fffc22,
     type: 3}
-  formationPrefab: {fileID: 9203131746797017684, guid: 2266ac35cfd988747b4e6f5d6b281ae1,
+  formationPrefab: {fileID: 6196880781507093504, guid: 2266ac35cfd988747b4e6f5d6b281ae1,
     type: 3}
   filterButtons: []
   formationDatas:
   - formationId: 
-    schoolName: ecole
-    schoolLocation: paris
     formationName: isart
-    informations:
-    - zethieuzh
-    - fjezifjiz
     sup: 1
+    apprentice: 0
+    duration: 
+    establishmentCount: 0
   - formationId: 
-    schoolName: angouleme
-    schoolLocation: machin,
     formationName: truc
-    informations:
-    - dsfsdf
-    - dfds
-    - dsf
-    - fsdf
-    - sfd
     sup: 0
+    apprentice: 0
+    duration: 
+    establishmentCount: 0
   displayFormations: []
   jobName: 
   uiText_Title: {fileID: 59713467}
@@ -20203,7 +20198,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -142.7, y: 0}
+  m_AnchoredPosition: {x: -115, y: 0}
   m_SizeDelta: {x: 32.6862, y: 41.7515}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1594410342

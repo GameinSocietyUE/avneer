@@ -10,6 +10,7 @@ using System.Text.RegularExpressions;
 using System.Data;
 using UnityEditor.VersionControl;
 using static MatchingResponseData;
+using static UnityEngine.AdaptivePerformance.Provider.AdaptivePerformanceSubsystemDescriptor;
 
 public class GameManager : MonoBehaviour
 {
@@ -45,6 +46,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private ScrollRect scrollRect;
     [SerializeField] private GameObject objectPoolContainer;
     [SerializeField] private GameObject emptyLastLine;
+    [SerializeField] private GameObject chatMatchResult;
 
     public CanvasManager canvasManager;
 
@@ -97,6 +99,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public int GetProfileGender()
+    {
+        return profileData.gender;
+    }
+
     public bool IsConnected()
     {
         return (this.loginToken != null && this.loginToken != "");
@@ -138,15 +145,8 @@ public class GameManager : MonoBehaviour
         _networkManager.HandleResponse("POSTCHAT", resultData);
     }
 
-    public void ChatResult(MatchingResponseData matchingResponseData)
+    public void InspectRecommendation(MatchingResponseData.Recommendation recommendation)
     {
-        Debug.Log("ChatResult");
-        //List<MatchingResponseData.Recommendation> recommendations = matchingResponseData.recommendations;
-        Debug.Log(matchingResponseData);
-        Debug.Log(matchingResponseData.hash);
-        Debug.Log(matchingResponseData.recommendation);
-        Debug.Log(matchingResponseData.recommendation.Count);
-        MatchingResponseData.Recommendation recommendation = matchingResponseData.recommendation[0];
         Debug.Log(recommendation.score + " " + recommendation.identifier + " " + recommendation.metadata.libelle_masculin + recommendation.metadata.formats_courts["format_court"][0].descriptif);
         //(string jobTitle, string jobDesc, string jobDescFull, string jobDurationMin, string jobDurationMax)
         string jobLibelle = profileData.gender == 0 ? recommendation.metadata.libelle_masculin : recommendation.metadata.libelle_feminin;
@@ -161,6 +161,38 @@ public class GameManager : MonoBehaviour
         {
             _networkManager.GetTrainingData(formation.id);
         }
+    }
+
+    public void ChatResult(MatchingResponseData matchingResponseData)
+    {
+        Debug.Log("ChatResult");
+        //List<MatchingResponseData.Recommendation> recommendations = matchingResponseData.recommendations;
+        Debug.Log(matchingResponseData);
+        Debug.Log(matchingResponseData.hash);
+        Debug.Log(matchingResponseData.recommendation);
+        Debug.Log(matchingResponseData.recommendation.Count);
+
+        DisplayMessage.Instance.Hide();
+        Instantiate(chatMatchResult, chatContent.transform);
+        ChatMessageResult.Instance.SetRecommendations(matchingResponseData.recommendation);
+
+
+
+        /*MatchingResponseData.Recommendation recommendation = matchingResponseData.recommendation[0];
+        Debug.Log(recommendation.score + " " + recommendation.identifier + " " + recommendation.metadata.libelle_masculin + recommendation.metadata.formats_courts["format_court"][0].descriptif);
+        //(string jobTitle, string jobDesc, string jobDescFull, string jobDurationMin, string jobDurationMax)
+        string jobLibelle = profileData.gender == 0 ? recommendation.metadata.libelle_masculin : recommendation.metadata.libelle_feminin;
+        List<FormationMinRequise> formations = recommendation.metadata.formations_min_requise["formation_min_requise"];
+        DisplayJobInfo.Instance.SetJobInfos(jobLibelle, recommendation.metadata.formats_courts["format_court"][0].descriptif,
+            recommendation.metadata.formats_courts["format_court"][1].descriptif, recommendation.metadata.niveau_acces_min.libelle, recommendation.metadata.niveau_acces_min.libelle, formations);
+        DisplayMessage.Instance.Hide();
+        DisplayChat.Instance.Hide();
+        canvasManager.DisplayPage(CanvasManager.Page.JobInfo);
+        //pull all formation data from backend
+        foreach (FormationMinRequise formation in formations)
+        {
+            _networkManager.GetTrainingData(formation.id);
+        }*/
     }
 
     public void BuildChat(String jsonResponse)

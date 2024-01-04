@@ -170,6 +170,11 @@ public class NetworkManager : MonoBehaviour
             Debug.Log(responseData);
             responseData = responseData.Replace("\"formations_min_requise\":null", "\"formations_min_requise\":{\"formation_min_requise\":[]}");
             Debug.Log(responseData);
+
+
+            //Debug temporaire
+            responseData = responseData.Replace("{\"id\":[\"FOR.4728\"],\"libelle\":[\"master traduction et interpr\\u00e9tation\"]}", "{\"id\":\"FOR.4728\",\"libelle\":\"master traduction et interpr\\u00e9tation\"}");
+
             //Bug with formations_min_requise when its not a list (only one formation)
             MatchingResponseData matchingResponseData = JsonConvert.DeserializeObject<MatchingResponseData>(responseData, new JsonSerializerSettings
             {
