@@ -135,6 +135,8 @@ PlayerSettings:
   loadStoreDebugModeEnabled: 0
   bundleVersion: 0.1
   preloadedAssets:
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: -24950437918874333, guid: 8aff61fcf2d4b9a4b8211b54e6490a46, type: 2}
   - {fileID: 11400000, guid: 31504c3bf663f4f49978efe95327a459, type: 2}
   - {fileID: 11400000, guid: 742a28a163504476cbfa65fb6f10b9e5, type: 2}
