@@ -7,13 +7,13 @@ public class EstablishmentsResponseData
 {
     public class EstablishmentsMetadata
     {
-        public string CP;
+        public int CP;
         public string sigle;
         public string statut;
         public string adresse;
         public string commune;
-        //public string téléphone;
-        //public string type d'établissement;
+        //public string telephone;
+        //public string type_etablissement;
     }
 
     public string identifier;

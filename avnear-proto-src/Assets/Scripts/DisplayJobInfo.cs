@@ -45,13 +45,12 @@ public class DisplayJobInfo : Displayable
         formationDataMap.Clear();
         formationUpdateIndex = 0;
         DisplayFormations.Instance.formationDatas.Clear();
-        //DisplayFormations.Instance.formationParent.Clear   Check clear children
-        //Todo: optimize, quick fix
-        /*int pastFormationCount = DisplayFormations.Instance.formationParent.childCount;
-        for (int i = 0; i < pastFormationCount; i++)
+        DisplayFormations.Instance.displayFormations.Clear();
+        //Todo: optimize, quick fix. Make a pool of gameobject to reuse instead of instantiate/destroy;
+        foreach (Transform child in DisplayFormations.Instance.formationParent.transform)
         {
-            Object.DestroyImmediate(DisplayFormations.Instance.formationParent.GetChild(i).gameObject);
-        }*/
+            Destroy(child.gameObject);
+        }
         this.jobTitleStr = jobTitle;
         this.jobTitle.text = jobTitle;
         this.jobDurationMin.text = jobDurationMin;
@@ -70,7 +69,7 @@ public class DisplayJobInfo : Displayable
     public void UpdateFormationData(TrainingsResponseData trainingsResponseData)
     {
         FormationMinRequise formation = formationsMap[trainingsResponseData.identifier];
-        FormationData formationData = new FormationData(formation.id, formation.libelle, trainingsResponseData.parcoursup, trainingsResponseData.apprenticeship, trainingsResponseData.metadata.duree_formation, trainingsResponseData.establishments.Count);
+        FormationData formationData = new FormationData(formation.id, formation.libelle, trainingsResponseData.parcoursup, trainingsResponseData.apprenticeship, trainingsResponseData.metadata.duree_formation, trainingsResponseData.establishments);
         formationDataMap.Add(formation.id, formationData);
         formationUpdateIndex++;
         if (formationUpdateIndex == formations.Count)

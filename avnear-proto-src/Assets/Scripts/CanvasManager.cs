@@ -15,6 +15,7 @@ public class CanvasManager : MonoBehaviour {
         Formations,
         SavedFormations,
         SavedJobs,
+        Establishments,
         AvatarCreation,
         None,
     }

@@ -19,7 +19,8 @@ public class NetworkManager : MonoBehaviour
         {"loginUrl", "https://api.avneer.com/authentication"},
         {"getChatUrl", "https://api.avneer.com/scenarios/"},
         {"postChatData", "https://api.avneer.com/matchings"},
-        {"getTraining", "https://api.avneer.com/trainings/"}
+        {"getTraining", "https://api.avneer.com/trainings/"},
+        {"getEstablishments", "https://api.avneer.com/establishments/"}
     };
 
     public IEnumerator GetChatData()
@@ -192,6 +193,15 @@ public class NetworkManager : MonoBehaviour
             });
             GameManager.Instance.GetTrainingDataSuccess(trainingsResponseData);
         }
+        else if (responseCall.Equals("GETESTABLISHMENT"))
+        {
+            Debug.Log("Response from GETESTABLISHMENT: " + responseData);
+            EstablishmentsResponseData establishmentsResponseData = JsonConvert.DeserializeObject<EstablishmentsResponseData>(responseData, new JsonSerializerSettings
+            {
+                NullValueHandling = NullValueHandling.Ignore
+            });
+            GameManager.Instance.GetEstablishmentDataSuccess(establishmentsResponseData);
+        }
     }
 
     public void DoLogin(string username, string password)
@@ -216,6 +226,12 @@ public class NetworkManager : MonoBehaviour
     public void GetTrainingData(string id)
     {
         StartCoroutine(GetRequest(Endpoints["getTraining"] + id, "GETTRAINING"));
+    }
+
+
+    public void GetEstablishmentData(string id)
+    {
+        StartCoroutine(GetRequest(Endpoints["getEstablishments"] + id, "GETESTABLISHMENT"));
     }
 
     class UserLogin

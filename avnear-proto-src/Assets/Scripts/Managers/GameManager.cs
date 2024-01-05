@@ -8,7 +8,6 @@ using System.IO;
 using System;
 using System.Text.RegularExpressions;
 using System.Data;
-using UnityEditor.VersionControl;
 using static MatchingResponseData;
 using static UnityEngine.AdaptivePerformance.Provider.AdaptivePerformanceSubsystemDescriptor;
 
@@ -133,6 +132,11 @@ public class GameManager : MonoBehaviour
         DisplayJobInfo.Instance.UpdateFormationData(trainingsResponseData);
     }
 
+    public void GetEstablishmentDataSuccess(EstablishmentsResponseData establishmentsResponseData)
+    {
+        DisplayEstablishments.Instance.UpdateEstablishmentData(establishmentsResponseData);
+    }
+
     public void SendChatData()
     {
         _networkManager.PostChatData(interactions);
@@ -161,6 +165,14 @@ public class GameManager : MonoBehaviour
         foreach (FormationMinRequise formation in formations)
         {
             _networkManager.GetTrainingData(formation.id);
+        }
+    }
+
+    public void InspectEstablishments(List<TrainingsResponseData.Establishment> establishments)
+    {
+        foreach (TrainingsResponseData.Establishment establishment in establishments)
+        {
+            _networkManager.GetEstablishmentData(establishment.identifier);
         }
     }
 
@@ -231,7 +243,7 @@ public class GameManager : MonoBehaviour
             if (currentMessage != null)
             {
                 DisplayChat.Instance.StopWaitingAnim(currentMessage.id);
-                if (!DisplayChat.Instance.messagesDisplay[currentMessage.id].visible)
+                if (DisplayChat.Instance.messagesDisplay[currentMessage.id] != null && !DisplayChat.Instance.messagesDisplay[currentMessage.id].visible)
                 {
                     DisplayChat.Instance.AddMessage(currentMessage, DisplayChat.Side.Bot);
                 }
