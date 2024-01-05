@@ -72,6 +72,81 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_Hair_01_002_Pbr
+    second: {fileID: 2100000, guid: 662d839b08691de47b53abe79699cde8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_02_F_001_Pbr
+    second: {fileID: 2100000, guid: 5834355952e1b204fba88d0ceb01b4ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_03_F_001_Pbr
+    second: {fileID: 2100000, guid: 9e583fc64d9d85549a6a319e0b3474a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_04_F_001_Pbr
+    second: {fileID: 2100000, guid: 61b81a7bbe077a84bbc07255e11c4c3d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_05_002_Pbr
+    second: {fileID: 2100000, guid: dab7f9452d6e87e4e83513aeca0f56cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_06_F_001_Pbr
+    second: {fileID: 2100000, guid: 61b81a7bbe077a84bbc07255e11c4c3d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_07_002_Pbr
+    second: {fileID: 2100000, guid: dab7f9452d6e87e4e83513aeca0f56cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_08_F_001_Pbr
+    second: {fileID: 2100000, guid: 2f11a628a96cbf04483bfef5066bd9fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_09_002_Pbr
+    second: {fileID: 2100000, guid: 17758110ab8229b43941b2121ca252ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_10_F_001_Pbr
+    second: {fileID: 2100000, guid: 7ce892881ed60fd439b4e334147a1293, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_11_F_001_Pbr
+    second: {fileID: 2100000, guid: 2f11a628a96cbf04483bfef5066bd9fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_12_002_Pbr
+    second: {fileID: 2100000, guid: f5ac3b26ad0fa4c44ba206e2df83a9e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_13_F_001_Pbr
+    second: {fileID: 2100000, guid: 2f11a628a96cbf04483bfef5066bd9fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_14_002_Pbr
+    second: {fileID: 2100000, guid: 7ce892881ed60fd439b4e334147a1293, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_15_F_001_Pbr
+    second: {fileID: 2100000, guid: 7ce892881ed60fd439b4e334147a1293, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: M_Props_002_Pbr
     second: {fileID: 2100000, guid: a37e6aebcefac544899563b90ccced37, type: 2}
   - first:

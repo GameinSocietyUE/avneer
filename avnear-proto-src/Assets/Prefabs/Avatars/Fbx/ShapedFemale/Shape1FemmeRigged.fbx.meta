@@ -62,6 +62,81 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: M_Hair_01_001
+    second: {fileID: 2100000, guid: 662d839b08691de47b53abe79699cde8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_02_F
+    second: {fileID: 2100000, guid: 5834355952e1b204fba88d0ceb01b4ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_03_F
+    second: {fileID: 2100000, guid: ebaee0c45338dce45adc334d4738c63a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_04_F
+    second: {fileID: 2100000, guid: ebaee0c45338dce45adc334d4738c63a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_05_001
+    second: {fileID: 2100000, guid: f5ac3b26ad0fa4c44ba206e2df83a9e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_06_F
+    second: {fileID: 2100000, guid: ebaee0c45338dce45adc334d4738c63a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_07_001
+    second: {fileID: 2100000, guid: 7ce892881ed60fd439b4e334147a1293, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_08_F
+    second: {fileID: 2100000, guid: 7ce892881ed60fd439b4e334147a1293, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_09_001
+    second: {fileID: 2100000, guid: 17758110ab8229b43941b2121ca252ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_10_F
+    second: {fileID: 2100000, guid: 7ce892881ed60fd439b4e334147a1293, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_11_F
+    second: {fileID: 2100000, guid: 2f11a628a96cbf04483bfef5066bd9fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_12_001
+    second: {fileID: 2100000, guid: 2f11a628a96cbf04483bfef5066bd9fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_13_F
+    second: {fileID: 2100000, guid: 2f11a628a96cbf04483bfef5066bd9fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_14_001
+    second: {fileID: 2100000, guid: f60d2570f93635f4ca72b138b7c2c302, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_Hair_15_F
+    second: {fileID: 2100000, guid: 38eb6923ec71cf84a91f2e0d365c1516, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: M_MateriauxIndustrie_Female
     second: {fileID: 2100000, guid: 8ee704fb6261d1e418accf6931759bad, type: 2}
   - first:

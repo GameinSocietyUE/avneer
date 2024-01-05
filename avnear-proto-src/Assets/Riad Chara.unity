@@ -7274,10 +7274,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6154710034299353256, guid: 125aa0a691cdddc44bafb328d2660573,
+        type: 3}
+      propertyPath: m_Name
+      value: T-IDEO2.4869_SanteHomme
+      objectReference: {fileID: 0}
+    - target: {fileID: 853682668234806800, guid: 125aa0a691cdddc44bafb328d2660573,
+        type: 3}
+      propertyPath: m_Name
+      value: T-IDEO2.4846_FonctionPubliqueHomme
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 125aa0a691cdddc44bafb328d2660573,
         type: 3}
       propertyPath: m_Name
       value: Shape 4 HommeRigged
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797914979189392997, guid: 125aa0a691cdddc44bafb328d2660573,
+        type: 3}
+      propertyPath: m_Name
+      value: T-IDEO2.4856_SocialHomme
+      objectReference: {fileID: 0}
+    - target: {fileID: 6884262946393891377, guid: 125aa0a691cdddc44bafb328d2660573,
+        type: 3}
+      propertyPath: m_Name
+      value: T-IDEO2.4835_InformatiqueReseauxHomme
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
