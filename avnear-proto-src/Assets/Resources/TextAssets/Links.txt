@@ -1,0 +1,8 @@
+liste,titre fiche,texte fiche,lien internet
+Finances,Mes aides financières,Découvre les aides auxquelles tu as droit en moins de 5 minutes !,https://www.1jeune1solution.gouv.fr/mes-aides
+Logement,Mes aides au logement,Découvre toutes les aides au logement dont tu peux bénéficier,https://www.1jeune1solution.gouv.fr/logements/aides-logement
+Assurances et mutuelles,Mes assurances et mutuelles étudiantes,Toute l'information sur tes assurances et tes mutuelles étudiantes,https://www.etudiant.gouv.fr/fr/complementaire-sante-mutuelles-271
+Culture et loisirs,"Voyage, culture et loisirs",Découvre tes avantages sur tes voyage et tes loisirs,https://www.etudiant.gouv.fr/fr/vous-bouger-et-vous-cultiver-1911
+Jobs étudiants,Mon job étudiant,Trouve facilement un job dans ta ville,https://www.etudiant.gouv.fr/fr/trouver-un-job-etudiant-904
+Téléphonie et internet,Mon téléphone et ma box internet,Toutes les offres spéciales étudiants pour rester connecté,https://www.echosdunet.net/comparateur-forfait-mobile/forfait-etudiant
+Vie quotidienne,Mes bons plans repas,Découvre les bons plans pour des repas équilibrés et pas chers !,https://www.etudiant.gouv.fr/fr/vous-restaurer-1903
