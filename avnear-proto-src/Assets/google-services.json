@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "314747827514",
+    "project_id": "avneer-6c5b4",
+    "storage_bucket": "avneer-6c5b4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:314747827514:android:ff98246c9e71e378614c03",
+        "android_client_info": {
+          "package_name": "com.avnear.AVNEER"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXPT3Nivanzt7pDQLm0iQVBWGJSlFy_p4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
