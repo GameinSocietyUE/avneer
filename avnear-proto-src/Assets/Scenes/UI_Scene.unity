@@ -15759,7 +15759,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 370619087}
   m_HandleRect: {fileID: 370619086}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -24238,7 +24238,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16.1
+  m_fontSize: 16.05
   m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -25016,7 +25016,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 469871773}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.76810694
+  m_Size: 0.76810706
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -27291,7 +27291,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1820633080
 RectTransform:
   m_ObjectHideFlags: 0
@@ -27325,7 +27325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.50980395}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
